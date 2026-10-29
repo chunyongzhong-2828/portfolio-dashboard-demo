@@ -1,4 +1,14 @@
-<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>📊 持仓 Delta</title><style>
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>持仓 Delta 看板</title>
+<script>
+window.__DEMO__={"/api/snapshot": {"updated_at": "2026-10-29 16:00:00", "market_state": {"us_open": false, "hk_open": false, "any_open": false, "us_status": "Closed", "hk_status": "Closed", "source": "demo"}, "fx_rates": {"HKD": 7.8456, "CNY": 6.6662}, "net_liquidation_usd": 248500.0, "excess_liquidity_usd": 186200.0, "maint_margin_usd": 62300.0, "init_margin_usd": 71900.0, "available_funds_usd": 176600.0, "buying_power_usd": 706400.0, "margin_usage_pct": 25.07, "excess_liq_pct": 74.93, "total_position_value_usd": 262991.75, "overall_position_pct": 105.83, "total_exposure_usd": 417343.75, "total_exposure_pct": 167.95, "portfolio_beta": 1.6, "negative_pairs": [{"a": "TLT", "b": "QQQ", "correlation": -0.31}, {"a": "TLT", "b": "PLTR", "correlation": -0.28}, {"a": "GLD", "b": "TQQQ", "correlation": -0.22}, {"a": "700", "b": "SPY", "correlation": -0.12}], "stats_updated_at": "2026-10-29T02:45:00+00:00", "tickers": [{"symbol": "QQQ", "asset_class": "美股科技&大盘", "asset_class_id": "US_TECH_BROAD", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "", "stock_shares": 200.0, "option_delta_shares": -54.0, "total_delta": 146.0, "underlying_price": 528.4, "market_value_usd": 103720.0, "position_pct": 41.74, "max_shares_single_side": 200.0, "max_exposure_usd": 105680.0, "max_exposure_pct": 42.53, "risk_case": "case2", "suggestions": [], "legs": [{"type": "STK", "qty": 200.0, "avg_cost": 486.2}, {"type": "OPT", "local_symbol": "QQQ   261219C00560000", "right": "C", "strike": 560.0, "expiration": "20261219", "qty": -2.0, "delta": 0.27, "delta_source": "ib", "multiplier": 100.0, "delta_shares": -54.0, "market_value": -1960.0}], "beta": 1.0, "effective_beta": 1.0, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "GLD", "asset_class": "贵金属", "asset_class_id": "PRECIOUS_METALS", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "GOLD", "stock_shares": 150.0, "option_delta_shares": 0, "total_delta": 150.0, "underlying_price": 312.6, "market_value_usd": 46890.0, "position_pct": 18.87, "max_shares_single_side": 150.0, "max_exposure_usd": 46890.0, "max_exposure_pct": 18.87, "risk_case": "case0", "suggestions": [{"icon": "🛡", "type": "covered_call", "title": "可卖 1 张 covered call", "detail": "持有 150 股, 未被 short call 覆盖的 100 股可卖 1 张 OTM call 收权利金, 不增保证金."}], "legs": [{"type": "STK", "qty": 150.0, "avg_cost": 262.0}], "beta": 0.12, "effective_beta": 0.12, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "TLT", "asset_class": "美债", "asset_class_id": "US_BONDS", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "LT_BONDS", "stock_shares": 500.0, "option_delta_shares": -95.0, "total_delta": 405.0, "underlying_price": 88.2, "market_value_usd": 43625.0, "position_pct": 17.56, "max_shares_single_side": 500.0, "max_exposure_usd": 44100.0, "max_exposure_pct": 17.75, "risk_case": "case2", "suggestions": [], "legs": [{"type": "STK", "qty": 500.0, "avg_cost": 90.1}, {"type": "OPT", "local_symbol": "TLT   261219C00092000", "right": "C", "strike": 92.0, "expiration": "20261219", "qty": -5.0, "delta": 0.19, "delta_source": "bs(yf_iv=0.13)", "multiplier": 100.0, "delta_shares": -95.0, "market_value": -475.0}], "beta": 0.21, "effective_beta": 0.21, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "NVDA", "asset_class": "美股科技&大盘", "asset_class_id": "US_TECH_BROAD", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "", "stock_shares": 100.0, "option_delta_shares": -22.0, "total_delta": 78.0, "underlying_price": 217.94, "market_value_usd": 21567.0, "position_pct": 8.68, "max_shares_single_side": 100.0, "max_exposure_usd": 21794.0, "max_exposure_pct": 8.77, "risk_case": "case2", "suggestions": [], "legs": [{"type": "STK", "qty": 100.0, "avg_cost": 171.5}, {"type": "OPT", "local_symbol": "NVDA  261120C00240000", "right": "C", "strike": 240.0, "expiration": "20261120", "qty": -1.0, "delta": 0.22, "delta_source": "ib", "multiplier": 100.0, "delta_shares": -22.0, "market_value": -227.0}], "beta": 1.92, "effective_beta": 1.92, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "700", "asset_class": "CN资产", "asset_class_id": "CN_ASSETS", "currency": "HKD", "inverse": false, "leverage": 1.0, "underlying": "", "stock_shares": 300.0, "option_delta_shares": 0, "total_delta": 300.0, "underlying_price": 562.0, "market_value_usd": 21489.75, "position_pct": 8.65, "max_shares_single_side": 300.0, "max_exposure_usd": 21489.75, "max_exposure_pct": 8.65, "risk_case": "case0", "suggestions": [{"icon": "🛡", "type": "covered_call", "title": "可卖 3 张 covered call", "detail": "持有 300 股, 未被 short call 覆盖的 300 股可卖 3 张 OTM call 收权利金, 不增保证金."}], "legs": [{"type": "STK", "qty": 300.0, "avg_cost": 498.0}], "beta": 0.31, "effective_beta": 0.31, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "PLTR", "asset_class": "题材成长-高beta", "asset_class_id": "HIGH_BETA", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "", "stock_shares": 100.0, "option_delta_shares": -51.0, "total_delta": 49.0, "underlying_price": 172.5, "market_value_usd": 16610.0, "position_pct": 6.68, "max_shares_single_side": 100.0, "max_exposure_usd": 17250.0, "max_exposure_pct": 6.94, "risk_case": "case2", "suggestions": [{"icon": "⚡", "type": "high_gamma", "title": "ATM 裸单腿临近到期 (gamma 风险)", "detail": "到期 ≤7 天且 |δ| 在 0.35~0.65 之间, 标的小幅波动就会让 delta 快速变化. 考虑移仓或平掉."}], "legs": [{"type": "STK", "qty": 100.0, "avg_cost": 141.0}, {"type": "OPT", "local_symbol": "PLTR  261105C00172500", "right": "C", "strike": 172.5, "expiration": "20261105", "qty": -1.0, "delta": 0.51, "delta_source": "ib", "multiplier": 100.0, "delta_shares": -51.0, "market_value": -640.0}], "beta": 2.9, "effective_beta": 2.9, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "IBIT", "asset_class": "加密货币", "asset_class_id": "CRYPTO", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "BTC", "stock_shares": 200.0, "option_delta_shares": -48.0, "total_delta": 152.0, "underlying_price": 61.3, "market_value_usd": 11840.0, "position_pct": 4.76, "max_shares_single_side": 200.0, "max_exposure_usd": 12260.0, "max_exposure_pct": 4.93, "risk_case": "case2", "suggestions": [], "legs": [{"type": "STK", "qty": 200.0, "avg_cost": 54.3}, {"type": "OPT", "local_symbol": "IBIT  261219C00070000", "right": "C", "strike": 70.0, "expiration": "20261219", "qty": -2.0, "delta": 0.24, "delta_source": "bs(yf_iv=0.58)", "multiplier": 100.0, "delta_shares": -48.0, "market_value": -420.0}], "beta": 2.4, "effective_beta": 2.4, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "TQQQ", "asset_class": "美股科技&大盘", "asset_class_id": "US_TECH_BROAD", "currency": "USD", "inverse": false, "leverage": 3.0, "underlying": "QQQ_IDX", "stock_shares": 0.0, "option_delta_shares": -54.0, "total_delta": -54.0, "underlying_price": 93.2, "market_value_usd": -1020.0, "position_pct": -0.41, "max_shares_single_side": 300.0, "max_exposure_usd": 83880.0, "max_exposure_pct": 33.75, "risk_case": "case1", "suggestions": [], "legs": [{"type": "OPT", "local_symbol": "TQQQ  261219C00110000", "right": "C", "strike": 110.0, "expiration": "20261219", "qty": -3.0, "delta": 0.18, "delta_source": "bs(yf_iv=0.72)", "multiplier": 100.0, "delta_shares": -54.0, "market_value": -1020.0}], "beta": 3.05, "effective_beta": 1.02, "beta_source": "1Y daily", "in_hedge_group": true, "is_dominant_in_group": true, "dominant_symbol": "TQQQ", "group_members": ["SQQQ"]}, {"symbol": "SQQQ", "asset_class": "美股科技&大盘", "asset_class_id": "US_TECH_BROAD", "currency": "USD", "inverse": true, "leverage": 3.0, "underlying": "QQQ_IDX", "stock_shares": 0.0, "option_delta_shares": -168.0, "total_delta": -168.0, "underlying_price": 26.8, "market_value_usd": -940.0, "position_pct": -0.38, "max_shares_single_side": 400.0, "max_exposure_usd": 32160.0, "max_exposure_pct": 12.94, "risk_case": "case1", "suggestions": [], "legs": [{"type": "OPT", "local_symbol": "SQQQ  261219C00030000", "right": "C", "strike": 30.0, "expiration": "20261219", "qty": -4.0, "delta": 0.42, "delta_source": "bs(yf_iv=0.75)", "multiplier": 100.0, "delta_shares": -168.0, "market_value": -940.0}], "beta": -3.1, "effective_beta": 1.03, "beta_source": "1Y daily", "in_hedge_group": true, "is_dominant_in_group": false, "dominant_symbol": "TQQQ", "group_members": ["TQQQ"]}, {"symbol": "SPY", "asset_class": "美股科技&大盘", "asset_class_id": "US_TECH_BROAD", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "", "stock_shares": 0.0, "option_delta_shares": 17.0, "total_delta": 17.0, "underlying_price": 689.5, "market_value_usd": -790.0, "position_pct": -0.32, "max_shares_single_side": 100.0, "max_exposure_usd": 64000.0, "max_exposure_pct": 25.75, "risk_case": "case1", "suggestions": [], "legs": [{"type": "OPT", "local_symbol": "SPY   261219P00640000", "right": "P", "strike": 640.0, "expiration": "20261219", "qty": -1.0, "delta": -0.17, "delta_source": "ib", "multiplier": 100.0, "delta_shares": 17.0, "market_value": -790.0}], "beta": 1.0, "effective_beta": 1.0, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}], "asset_classes": [{"id": "US_TECH_BROAD", "name": "美股科技&大盘", "color": "#3b82f6", "market_value_usd": 122537.0, "position_pct": 49.31, "exposure_usd": 275354.0, "exposure_pct": 110.81, "ticker_count": 5, "pairs": [{"underlying": "QQQ_IDX", "max_exposure_usd": 83880.0, "members": ["SQQQ", "TQQQ"], "dominant": "TQQQ"}]}, {"id": "US_BONDS", "name": "美债", "color": "#eab308", "market_value_usd": 43625.0, "position_pct": 17.56, "exposure_usd": 44100.0, "exposure_pct": 17.75, "ticker_count": 1, "pairs": []}, {"id": "PRECIOUS_METALS", "name": "贵金属", "color": "#a855f7", "market_value_usd": 46890.0, "position_pct": 18.87, "exposure_usd": 46890.0, "exposure_pct": 18.87, "ticker_count": 1, "pairs": []}, {"id": "CRYPTO", "name": "加密货币", "color": "#f97316", "market_value_usd": 11840.0, "position_pct": 4.76, "exposure_usd": 12260.0, "exposure_pct": 4.93, "ticker_count": 1, "pairs": []}, {"id": "CRUDE_OIL", "name": "原油", "color": "#78350f", "market_value_usd": 0, "position_pct": 0.0, "exposure_usd": 0, "exposure_pct": 0.0, "ticker_count": 0, "pairs": []}, {"id": "CN_ASSETS", "name": "CN资产", "color": "#ef4444", "market_value_usd": 21489.75, "position_pct": 8.65, "exposure_usd": 21489.75, "exposure_pct": 8.65, "ticker_count": 1, "pairs": []}, {"id": "LOW_BETA", "name": "其他-低beta", "color": "#10b981", "market_value_usd": 0, "position_pct": 0.0, "exposure_usd": 0, "exposure_pct": 0.0, "ticker_count": 0, "pairs": []}, {"id": "HIGH_BETA", "name": "题材成长-高beta", "color": "#ec4899", "market_value_usd": 16610.0, "position_pct": 6.68, "exposure_usd": 17250.0, "exposure_pct": 6.94, "ticker_count": 1, "pairs": []}, {"id": "UNCLASSIFIED", "name": "未分类", "color": "#6b7280", "market_value_usd": 0, "position_pct": 0.0, "exposure_usd": 0, "exposure_pct": 0.0, "ticker_count": 0, "pairs": []}]}, "/api/snapshot_xi": {"updated_at": "2026-10-29 16:00:00", "market_state": {"us_open": false, "hk_open": false, "any_open": false, "us_status": "Closed", "hk_status": "Closed", "source": "demo"}, "fx_rates": {"HKD": 7.8456, "CNY": 6.6662}, "net_liquidation_usd": 248500.0, "excess_liquidity_usd": 186200.0, "maint_margin_usd": 62300.0, "init_margin_usd": 71900.0, "available_funds_usd": 176600.0, "buying_power_usd": 706400.0, "margin_usage_pct": 25.07, "excess_liq_pct": 74.93, "total_position_value_usd": 262991.75, "overall_position_pct": 105.83, "total_exposure_usd": 417343.75, "total_exposure_pct": 167.95, "portfolio_beta": 1.6, "negative_pairs": [{"a": "TLT", "b": "QQQ", "correlation": -0.31}, {"a": "TLT", "b": "PLTR", "correlation": -0.28}, {"a": "GLD", "b": "TQQQ", "correlation": -0.22}, {"a": "700", "b": "SPY", "correlation": -0.12}], "stats_updated_at": "2026-10-29T02:45:00+00:00", "tickers": [{"symbol": "QQQ", "asset_class": "美股科技&大盘", "asset_class_id": "US_TECH_BROAD", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "", "stock_shares": 200.0, "option_delta_shares": -54.0, "total_delta": 146.0, "underlying_price": 528.4, "market_value_usd": 103720.0, "position_pct": 41.74, "max_shares_single_side": 200.0, "max_exposure_usd": 105680.0, "max_exposure_pct": 42.53, "risk_case": "case2", "suggestions": [], "legs": [{"type": "STK", "qty": 200.0, "avg_cost": 486.2}, {"type": "OPT", "local_symbol": "QQQ   261219C00560000", "right": "C", "strike": 560.0, "expiration": "20261219", "qty": -2.0, "delta": 0.27, "delta_source": "ib", "multiplier": 100.0, "delta_shares": -54.0, "market_value": -1960.0}], "beta": 1.0, "effective_beta": 1.0, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "GLD", "asset_class": "贵金属", "asset_class_id": "PRECIOUS_METALS", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "GOLD", "stock_shares": 150.0, "option_delta_shares": 0, "total_delta": 150.0, "underlying_price": 312.6, "market_value_usd": 46890.0, "position_pct": 18.87, "max_shares_single_side": 150.0, "max_exposure_usd": 46890.0, "max_exposure_pct": 18.87, "risk_case": "case0", "suggestions": [{"icon": "🛡", "type": "covered_call", "title": "可卖 1 张 covered call", "detail": "持有 150 股, 未被 short call 覆盖的 100 股可卖 1 张 OTM call 收权利金, 不增保证金."}], "legs": [{"type": "STK", "qty": 150.0, "avg_cost": 262.0}], "beta": 0.12, "effective_beta": 0.12, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "TLT", "asset_class": "美债", "asset_class_id": "US_BONDS", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "LT_BONDS", "stock_shares": 500.0, "option_delta_shares": -95.0, "total_delta": 405.0, "underlying_price": 88.2, "market_value_usd": 43625.0, "position_pct": 17.56, "max_shares_single_side": 500.0, "max_exposure_usd": 44100.0, "max_exposure_pct": 17.75, "risk_case": "case2", "suggestions": [], "legs": [{"type": "STK", "qty": 500.0, "avg_cost": 90.1}, {"type": "OPT", "local_symbol": "TLT   261219C00092000", "right": "C", "strike": 92.0, "expiration": "20261219", "qty": -5.0, "delta": 0.19, "delta_source": "bs(yf_iv=0.13)", "multiplier": 100.0, "delta_shares": -95.0, "market_value": -475.0}], "beta": 0.21, "effective_beta": 0.21, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "NVDA", "asset_class": "美股科技&大盘", "asset_class_id": "US_TECH_BROAD", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "", "stock_shares": 100.0, "option_delta_shares": -22.0, "total_delta": 78.0, "underlying_price": 217.94, "market_value_usd": 21567.0, "position_pct": 8.68, "max_shares_single_side": 100.0, "max_exposure_usd": 21794.0, "max_exposure_pct": 8.77, "risk_case": "case2", "suggestions": [], "legs": [{"type": "STK", "qty": 100.0, "avg_cost": 171.5}, {"type": "OPT", "local_symbol": "NVDA  261120C00240000", "right": "C", "strike": 240.0, "expiration": "20261120", "qty": -1.0, "delta": 0.22, "delta_source": "ib", "multiplier": 100.0, "delta_shares": -22.0, "market_value": -227.0}], "beta": 1.92, "effective_beta": 1.92, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "700", "asset_class": "CN资产", "asset_class_id": "CN_ASSETS", "currency": "HKD", "inverse": false, "leverage": 1.0, "underlying": "", "stock_shares": 300.0, "option_delta_shares": 0, "total_delta": 300.0, "underlying_price": 562.0, "market_value_usd": 21489.75, "position_pct": 8.65, "max_shares_single_side": 300.0, "max_exposure_usd": 21489.75, "max_exposure_pct": 8.65, "risk_case": "case0", "suggestions": [{"icon": "🛡", "type": "covered_call", "title": "可卖 3 张 covered call", "detail": "持有 300 股, 未被 short call 覆盖的 300 股可卖 3 张 OTM call 收权利金, 不增保证金."}], "legs": [{"type": "STK", "qty": 300.0, "avg_cost": 498.0}], "beta": 0.31, "effective_beta": 0.31, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "PLTR", "asset_class": "题材成长-高beta", "asset_class_id": "HIGH_BETA", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "", "stock_shares": 100.0, "option_delta_shares": -51.0, "total_delta": 49.0, "underlying_price": 172.5, "market_value_usd": 16610.0, "position_pct": 6.68, "max_shares_single_side": 100.0, "max_exposure_usd": 17250.0, "max_exposure_pct": 6.94, "risk_case": "case2", "suggestions": [{"icon": "⚡", "type": "high_gamma", "title": "ATM 裸单腿临近到期 (gamma 风险)", "detail": "到期 ≤7 天且 |δ| 在 0.35~0.65 之间, 标的小幅波动就会让 delta 快速变化. 考虑移仓或平掉."}], "legs": [{"type": "STK", "qty": 100.0, "avg_cost": 141.0}, {"type": "OPT", "local_symbol": "PLTR  261105C00172500", "right": "C", "strike": 172.5, "expiration": "20261105", "qty": -1.0, "delta": 0.51, "delta_source": "ib", "multiplier": 100.0, "delta_shares": -51.0, "market_value": -640.0}], "beta": 2.9, "effective_beta": 2.9, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "IBIT", "asset_class": "加密货币", "asset_class_id": "CRYPTO", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "BTC", "stock_shares": 200.0, "option_delta_shares": -48.0, "total_delta": 152.0, "underlying_price": 61.3, "market_value_usd": 11840.0, "position_pct": 4.76, "max_shares_single_side": 200.0, "max_exposure_usd": 12260.0, "max_exposure_pct": 4.93, "risk_case": "case2", "suggestions": [], "legs": [{"type": "STK", "qty": 200.0, "avg_cost": 54.3}, {"type": "OPT", "local_symbol": "IBIT  261219C00070000", "right": "C", "strike": 70.0, "expiration": "20261219", "qty": -2.0, "delta": 0.24, "delta_source": "bs(yf_iv=0.58)", "multiplier": 100.0, "delta_shares": -48.0, "market_value": -420.0}], "beta": 2.4, "effective_beta": 2.4, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}, {"symbol": "TQQQ", "asset_class": "美股科技&大盘", "asset_class_id": "US_TECH_BROAD", "currency": "USD", "inverse": false, "leverage": 3.0, "underlying": "QQQ_IDX", "stock_shares": 0.0, "option_delta_shares": -54.0, "total_delta": -54.0, "underlying_price": 93.2, "market_value_usd": -1020.0, "position_pct": -0.41, "max_shares_single_side": 300.0, "max_exposure_usd": 83880.0, "max_exposure_pct": 33.75, "risk_case": "case1", "suggestions": [], "legs": [{"type": "OPT", "local_symbol": "TQQQ  261219C00110000", "right": "C", "strike": 110.0, "expiration": "20261219", "qty": -3.0, "delta": 0.18, "delta_source": "bs(yf_iv=0.72)", "multiplier": 100.0, "delta_shares": -54.0, "market_value": -1020.0}], "beta": 3.05, "effective_beta": 1.02, "beta_source": "1Y daily", "in_hedge_group": true, "is_dominant_in_group": true, "dominant_symbol": "TQQQ", "group_members": ["SQQQ"]}, {"symbol": "SQQQ", "asset_class": "美股科技&大盘", "asset_class_id": "US_TECH_BROAD", "currency": "USD", "inverse": true, "leverage": 3.0, "underlying": "QQQ_IDX", "stock_shares": 0.0, "option_delta_shares": -168.0, "total_delta": -168.0, "underlying_price": 26.8, "market_value_usd": -940.0, "position_pct": -0.38, "max_shares_single_side": 400.0, "max_exposure_usd": 32160.0, "max_exposure_pct": 12.94, "risk_case": "case1", "suggestions": [], "legs": [{"type": "OPT", "local_symbol": "SQQQ  261219C00030000", "right": "C", "strike": 30.0, "expiration": "20261219", "qty": -4.0, "delta": 0.42, "delta_source": "bs(yf_iv=0.75)", "multiplier": 100.0, "delta_shares": -168.0, "market_value": -940.0}], "beta": -3.1, "effective_beta": 1.03, "beta_source": "1Y daily", "in_hedge_group": true, "is_dominant_in_group": false, "dominant_symbol": "TQQQ", "group_members": ["TQQQ"]}, {"symbol": "SPY", "asset_class": "美股科技&大盘", "asset_class_id": "US_TECH_BROAD", "currency": "USD", "inverse": false, "leverage": 1.0, "underlying": "", "stock_shares": 0.0, "option_delta_shares": 17.0, "total_delta": 17.0, "underlying_price": 689.5, "market_value_usd": -790.0, "position_pct": -0.32, "max_shares_single_side": 100.0, "max_exposure_usd": 64000.0, "max_exposure_pct": 25.75, "risk_case": "case1", "suggestions": [], "legs": [{"type": "OPT", "local_symbol": "SPY   261219P00640000", "right": "P", "strike": 640.0, "expiration": "20261219", "qty": -1.0, "delta": -0.17, "delta_source": "ib", "multiplier": 100.0, "delta_shares": 17.0, "market_value": -790.0}], "beta": 1.0, "effective_beta": 1.0, "beta_source": "1Y daily", "in_hedge_group": false, "is_dominant_in_group": true}], "asset_classes": [{"id": "US_TECH_BROAD", "name": "美股科技&大盘", "color": "#3b82f6", "market_value_usd": 122537.0, "position_pct": 49.31, "exposure_usd": 275354.0, "exposure_pct": 110.81, "ticker_count": 5, "pairs": [{"underlying": "QQQ_IDX", "max_exposure_usd": 83880.0, "members": ["SQQQ", "TQQQ"], "dominant": "TQQQ"}]}, {"id": "US_BONDS", "name": "美债", "color": "#eab308", "market_value_usd": 43625.0, "position_pct": 17.56, "exposure_usd": 44100.0, "exposure_pct": 17.75, "ticker_count": 1, "pairs": []}, {"id": "PRECIOUS_METALS", "name": "贵金属", "color": "#a855f7", "market_value_usd": 46890.0, "position_pct": 18.87, "exposure_usd": 46890.0, "exposure_pct": 18.87, "ticker_count": 1, "pairs": []}, {"id": "CRYPTO", "name": "加密货币", "color": "#f97316", "market_value_usd": 11840.0, "position_pct": 4.76, "exposure_usd": 12260.0, "exposure_pct": 4.93, "ticker_count": 1, "pairs": []}, {"id": "CRUDE_OIL", "name": "原油", "color": "#78350f", "market_value_usd": 0, "position_pct": 0.0, "exposure_usd": 0, "exposure_pct": 0.0, "ticker_count": 0, "pairs": []}, {"id": "CN_ASSETS", "name": "CN资产", "color": "#ef4444", "market_value_usd": 21489.75, "position_pct": 8.65, "exposure_usd": 21489.75, "exposure_pct": 8.65, "ticker_count": 1, "pairs": []}, {"id": "LOW_BETA", "name": "其他-低beta", "color": "#10b981", "market_value_usd": 0, "position_pct": 0.0, "exposure_usd": 0, "exposure_pct": 0.0, "ticker_count": 0, "pairs": []}, {"id": "HIGH_BETA", "name": "题材成长-高beta", "color": "#ec4899", "market_value_usd": 16610.0, "position_pct": 6.68, "exposure_usd": 17250.0, "exposure_pct": 6.94, "ticker_count": 1, "pairs": []}, {"id": "UNCLASSIFIED", "name": "未分类", "color": "#6b7280", "market_value_usd": 0, "position_pct": 0.0, "exposure_usd": 0, "exposure_pct": 0.0, "ticker_count": 0, "pairs": []}]}, "/api/margin": {"updated_at": "2026-10-29 16:00:00", "account_maint_usd": 62300.0, "sum_standalone_usd": 82826, "sum_release_usd": 60250, "pm_savings_usd": 20526.0, "standalone_complete": true, "shared_usd": 2050.0, "sum_release_pos_usd": 61300, "shared_pos_usd": 1000.0, "shared_pos_pct": 1.6, "sum_margin_usd": 60250, "by_symbol": [{"symbol": "QQQ", "asset_class": "美股科技&大盘", "standalone_usd": 26420, "release_usd": 22000, "release_method": "whatIf 整组", "has_long_opt": false, "note": ""}, {"symbol": "GLD", "asset_class": "贵金属", "standalone_usd": 11723, "release_usd": 9800, "release_method": "whatIf 单腿", "has_long_opt": false, "note": ""}, {"symbol": "TLT", "asset_class": "美债", "standalone_usd": 11025, "release_usd": 3200, "release_method": "whatIf 整组", "has_long_opt": false, "note": "国债 ETF 波动小，IBKR 按小幅涨跌来收，比公式少很多"}, {"symbol": "SPY", "asset_class": "美股科技&大盘", "standalone_usd": 9630, "release_usd": 6100, "release_method": "whatIf 单腿", "has_long_opt": false, "note": ""}, {"symbol": "NVDA", "asset_class": "美股科技&大盘", "standalone_usd": 5449, "release_usd": 5100, "release_method": "whatIf 整组", "has_long_opt": false, "note": ""}, {"symbol": "700", "asset_class": "CN资产", "standalone_usd": 5373, "release_usd": 5600, "release_method": "whatIf 单腿(港股)", "has_long_opt": false, "note": ""}, {"symbol": "PLTR", "asset_class": "题材成长-高beta", "standalone_usd": 4313, "release_usd": 5600, "release_method": "whatIf 整组", "has_long_opt": false, "note": "波动大，IBKR 按更猛的涨跌来备钱，比公式收得多"}, {"symbol": "TQQQ", "asset_class": "美股科技&大盘", "standalone_usd": 3816, "release_usd": -450, "release_method": "whatIf 整组", "has_long_opt": false, "note": "与 SQQQ 对冲，单平释放不了，两边一起平才释放"}, {"symbol": "IBIT", "asset_class": "加密货币", "standalone_usd": 3065, "release_usd": 3900, "release_method": "whatIf 整组", "has_long_opt": false, "note": "波动大，IBKR 按更猛的涨跌来备钱，比公式收得多"}, {"symbol": "SQQQ", "asset_class": "美股科技&大盘", "standalone_usd": 2012, "release_usd": -600, "release_method": "whatIf 整组", "has_long_opt": false, "note": "与 TQQQ 对冲，单平释放不了：纳指暴涨时 TQQQ 裸露，保证金反而上升"}], "by_class": [{"asset_class": "美股科技&大盘", "standalone_usd": 47327, "release_usd": 32150, "release_pos_usd": 33200, "margin_usd": 33200, "pct": 53.3}, {"asset_class": "贵金属", "standalone_usd": 11723, "release_usd": 9800, "release_pos_usd": 9800, "margin_usd": 9800, "pct": 15.7}, {"asset_class": "CN资产", "standalone_usd": 5373, "release_usd": 5600, "release_pos_usd": 5600, "margin_usd": 5600, "pct": 9.0}, {"asset_class": "题材成长-高beta", "standalone_usd": 4313, "release_usd": 5600, "release_pos_usd": 5600, "margin_usd": 5600, "pct": 9.0}, {"asset_class": "加密货币", "standalone_usd": 3065, "release_usd": 3900, "release_pos_usd": 3900, "margin_usd": 3900, "pct": 6.3}, {"asset_class": "美债", "standalone_usd": 11025, "release_usd": 3200, "release_pos_usd": 3200, "margin_usd": 3200, "pct": 5.1}]}};
+const __f=window.fetch;window.fetch=function(u,o){const s=String(u);for(const k of Object.keys(window.__DEMO__).sort((a,b)=>b.length-a.length)){if(s.startsWith(k))return Promise.resolve(new Response(JSON.stringify(window.__DEMO__[k]),{headers:{"Content-Type":"application/json"}}));}return __f(u,o);};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
   :root {
     --bg: #0b0f15;
     --bg-card: #151b26;
@@ -8,78 +18,821 @@
     --green: #10b981;
     --red: #ef4444;
     --warn: #f59e0b;
-    --blue: #60a5fa;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--bg); color: var(--text);
     font-family: -apple-system, "Segoe UI", "PingFang SC", sans-serif;
-    font-size: 14px; line-height: 1.7;
+    font-size: 13px;
   }
   header {
     padding: 14px 20px; border-bottom: 1px solid var(--border);
     display: flex; justify-content: space-between; align-items: center;
   }
   h1 { margin: 0; font-size: 16px; font-weight: 600; }
-  nav a { color: var(--muted); text-decoration: none; margin-right: 14px; font-size: 12px; }
-  nav a.active { color: var(--text); border-bottom: 2px solid var(--blue); padding-bottom: 4px; }
-  nav a:hover { color: var(--text); }
-  main { max-width: 980px; margin: 0 auto; padding: 30px 24px 80px; }
-  h2 {
-    font-size: 18px; margin: 32px 0 14px; padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
-  }
-  h3 { font-size: 14px; margin: 22px 0 10px; color: var(--blue); }
-  p { color: var(--text); }
-  ul, ol { padding-left: 22px; }
-  li { margin: 4px 0; }
-  code, pre {
+  .updated { color: var(--muted); font-size: 11px; margin-right: 12px; }
+  .container { padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .card {
     background: var(--bg-card); border: 1px solid var(--border);
-    border-radius: 4px; padding: 2px 6px;
-    font-family: ui-monospace, "SF Mono", Menlo, Monaco, monospace;
-    font-size: 12.5px;
+    border-radius: 8px; padding: 16px;
   }
-  pre {
-    padding: 12px 16px; overflow-x: auto; line-height: 1.6;
-    color: #cbd5e1;
+  .card h2 { margin: 0 0 12px; font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  .span-all { grid-column: 1 / -1; }
+
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .stat .label { color: var(--muted); font-size: 11px; margin-bottom: 4px; }
+  .stat .value { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { padding: 7px 10px; text-align: right; border-bottom: 1px solid var(--border); }
+  th {
+    color: var(--muted); font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .5px;
+    position: sticky; top: 0; background: var(--bg-card); z-index: 10;
+    box-shadow: 0 1px 0 var(--border);
   }
-  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
-  th, td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
-  th { background: var(--bg-card); color: var(--muted); font-weight: 600; }
-  .tag-auto { background: rgba(16,185,129,.15); color: var(--green); padding: 2px 8px; border-radius: 4px; font-size: 11px; }
-  .tag-manual { background: rgba(245,158,11,.15); color: var(--warn); padding: 2px 8px; border-radius: 4px; font-size: 11px; }
-  .tag-formula { background: rgba(96,165,250,.15); color: var(--blue); padding: 2px 8px; border-radius: 4px; font-size: 11px; }
-  .callout {
-    background: rgba(96,165,250,.08); border-left: 3px solid var(--blue);
-    padding: 10px 14px; margin: 14px 0; border-radius: 4px;
+  td:first-child, th:first-child { text-align: left; }
+  .class-row { background: rgba(255,255,255,.04); font-weight: 600; font-size: 13px; }
+  .class-row td { padding-top: 9px; padding-bottom: 9px; }
+  .ticker-row td:first-child { padding-left: 28px; color: var(--text); }
+  .ticker-unclassified { color: var(--warn) !important; font-weight: 600; }
+  .warn-color { color: var(--warn); }
+  .suppressed { color: #4a5568 !important; cursor: help; }
+  .suppressed s { color: #4a5568; text-decoration: line-through; text-decoration-color: #6b7280; }
+  .dimmed { opacity: 0.25; transition: opacity 0.2s; }
+  .dimmed .class-tag { opacity: 0.4; }
+  .class-tag { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 8px; vertical-align: middle; }
+  .pct-bar {
+    display: inline-block; vertical-align: middle; height: 8px; position: relative;
+    background: rgba(255,255,255,.05); border-radius: 2px; width: 100px; margin-left: 6px;
   }
-  .warn-callout {
-    background: rgba(245,158,11,.08); border-left: 3px solid var(--warn);
-    padding: 10px 14px; margin: 14px 0; border-radius: 4px;
+  .pct-bar .fill { position: absolute; top: 0; left: 0; height: 100%; border-radius: 2px; }
+  .pct-bar .tick {
+    position: absolute; top: -1px; height: 10px; width: 1px;
+    background: rgba(255,255,255,.3);
   }
-  .toc { background: var(--bg-card); padding: 14px 20px; border-radius: 6px; margin-bottom: 24px; }
-  .toc a { display: inline-block; margin-right: 14px; color: var(--blue); text-decoration: none; }
-  .toc a:hover { text-decoration: underline; }
-  .key { color: var(--blue); font-weight: 600; }
-</style><style>
-.wrap{max-width:1000px;margin:0 auto;padding:20px}
-.card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin:14px 0}
-h2{font-size:15px;margin:0 0 8px;color:var(--blue)} h3{font-size:14px;margin:12px 0 6px}
-table{border-collapse:collapse;width:100%;font-size:13px} th,td{border:1px solid var(--border);padding:6px 10px;text-align:left;vertical-align:top}
-th{background:#1a2130;color:var(--muted);font-weight:600} code{background:#1a2130;padding:1px 6px;border-radius:4px;font-size:12px}
-.muted{color:var(--muted)} .tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;background:#1a2130;color:var(--muted);margin-right:4px}
-</style></head><body><div style="background:#1f2937;color:#fbbf24;font-size:12px;padding:6px 20px;border-bottom:1px solid #374151">演示数据 · 金额按统一系数缩放、名称已脱敏，结构与计算口径与真实看板一致 · 仅用于展示，不构成任何投资建议</div><header><div><h1 style="display:inline-block;margin-right:20px">📊 持仓 Delta</h1>
-<nav style="display:inline-block">
-<a href="holdings.html" class="active">📊 持仓 Delta</a> <a href="holdings.html">👩 家人持仓</a> <a href="balance.html">💼 我的资产</a>
-<a href="balance_xi.html">👰 家人资产</a> <a href="balance_family.html">🏠 家庭资产</a> <a href="sqqq.html">🧨 SQQQ压测</a>
-<a href="docs.html">📖 计算口径</a></nav></div></header><div class="wrap">
-<div class="card"><h2>持仓 Delta 页（需要连接 IBKR 实时数据，演示站用说明代替）</h2>
-<p>这一页连着 IBKR 交易接口，每 60 秒刷新一次持仓，把股票和期权都折成「等效纳指敞口」。演示站没有实时连接，所以这里只说明它做什么。</p>
-<table><tr><th>模块</th><th>内容</th></tr>
-<tr><td>顶部指标</td><td>净清算价值、总敞口占比、保证金使用率、最大单边敞口</td></tr>
-<tr><td>持仓表</td><td>每个标的：市值、仓位占比、Delta、beta、等效敞口；对冲组（如 SQQQ／TQQQ、YINN／YANG）合并计算最大单边风险</td></tr>
-<tr><td>风险提示</td><td>到期 7 天内的平值裸单腿打 ⚡（gamma 风险）；深度实值打 🔥（行权风险）；真价差结构自动跳过</td></tr>
-<tr><td>保证金占用分解</td><td>左饼图按大类拆账户实际维持保证金；右表每个标的「独立占用」与「平仓可释放」两列并排，底部对账</td></tr>
-<tr><td>Delta 回算</td><td>收盘拿不到希腊值时，用 Black-Scholes 按隐含波动率本地回算，缺 IV 用 30 天历史波动率兜底</td></tr></table>
-<p class="muted">守护：launchd 开机自启；内置看门狗，开盘 10 分钟没有新快照就自杀重启。家人账户是只读 API，whatIf 被拦截，所以那一页不显示保证金分解。</p></div>
-</div></body></html>
+  .pct-bar .overflow { color: #ef4444; font-size: 9px; font-weight: 600;
+    position: absolute; right: -24px; top: -3px; }
+  .positive { color: var(--green); }
+  .negative { color: var(--red); }
+  .warning-banner {
+    background: rgba(245, 158, 11, .15); border: 1px solid var(--warn);
+    color: var(--warn); padding: 8px 14px; border-radius: 6px; font-size: 12px;
+    margin: 12px 20px 0;
+  }
+  .warning-banner code { background: rgba(0,0,0,.3); padding: 1px 6px; border-radius: 3px; }
+  .refresh-btn {
+    background: transparent; border: 1px solid var(--border); color: var(--muted);
+    padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 11px;
+    margin-left: 4px;
+  }
+  .refresh-btn:hover { color: var(--text); border-color: var(--muted); }
+  .refresh-btn.active { background: rgba(96,165,250,.15); color: #60a5fa; border-color: #60a5fa; }
+
+  /* 隐私模式: 糊掉金额/delta/敞口USD, 保留百分比 */
+  .hidden-amounts .sensitive {
+    filter: blur(6px) saturate(0.3);
+    transition: filter 0.15s;
+    cursor: help;
+  }
+  .hidden-amounts .sensitive:hover { filter: none; }
+
+  #pie-container { position: relative; height: 320px; }
+  .inverse-flag { color: var(--warn); font-size: 9px; padding: 1px 4px; background: rgba(245,158,110,.12); border-radius: 3px; margin-left: 4px; }
+  .lev-flag { color: #60a5fa; font-size: 9px; padding: 1px 4px; background: rgba(96,165,250,.12); border-radius: 3px; margin-left: 4px; }
+  .pair-flag { color: #a78bfa; font-size: 9px; padding: 1px 4px; background: rgba(167,139,250,.15); border-radius: 3px; margin-left: 4px; cursor: help; }
+  .suggestion-flag {
+    font-size: 12px; margin-left: 4px; cursor: help;
+    filter: saturate(0.85);
+    display: inline-block; vertical-align: middle;
+  }
+  .suggestion-flag:hover { filter: saturate(1.3); }
+  /* 全局浮动tooltip (JS定位) */
+  #floating-tooltip {
+    position: fixed; z-index: 2000; display: none;
+    background: #1f2937; color: #e4e7eb;
+    padding: 10px 14px; border-radius: 6px; font-size: 11px;
+    max-width: 320px; line-height: 1.5;
+    border: 1px solid #374151; font-weight: 400;
+    box-shadow: 0 8px 24px rgba(0,0,0,.4);
+    pointer-events: none;
+    white-space: pre-wrap; text-align: left;
+  }
+
+  @media (max-width: 1100px) { .container { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body><div style="background:#1f2937;color:#fbbf24;font-size:12px;padding:6px 20px;border-bottom:1px solid #374151">演示站 · 所有数字均为虚构示例值，页面结构与计算口径与真实看板一致 · 仅用于展示，不构成任何投资建议</div>
+<header>
+  <div>
+    <h1 style="display:inline-block;margin-right:20px">持仓 Delta 看板</h1>
+    <nav style="display:inline-block;font-size:12px">
+      <a id="nav-delta" href="holdings.html" style="color:#e4e7eb;text-decoration:none;border-bottom:2px solid #60a5fa;padding-bottom:4px;margin-right:14px">📊 持仓 Delta</a>
+      <a id="nav-xi-delta" href="holdings.html" style="color:#8893a6;text-decoration:none;margin-right:14px">👩 家人持仓</a>
+      <a href="balance.html" style="color:#8893a6;text-decoration:none;margin-right:14px">💼 我的资产</a>
+      <a href="balance_xi.html" style="color:#8893a6;text-decoration:none;margin-right:14px">👰 家人资产</a>
+      <a href="balance_family.html" style="color:#8893a6;text-decoration:none;margin-right:14px">🏠 家庭资产</a>
+      <a href="sqqq.html" style="color:#8893a6;text-decoration:none;margin-right:14px">🧨 SQQQ压测</a>
+      <a href="docs.html" style="color:#8893a6;text-decoration:none;margin-right:14px">📖 计算口径</a>
+    </nav>
+  </div>
+  <div>
+    <span id="market-state" style="font-size:11px;margin-right:10px"></span>
+    <span class="updated" id="updated">loading…</span>
+    <button class="refresh-btn" id="privacy-btn" onclick="togglePrivacy()" title="切换隐私模式 (屏蔽金额, 悬停可临时查看)">🔒 隐私</button>
+    <button class="refresh-btn" onclick="load()">手动刷新</button>
+  </div>
+</header>
+
+<div id="warning-area"></div>
+<div id="floating-tooltip"></div>
+
+<div class="container">
+
+  <div class="card span-all">
+    <div class="stat-row">
+      <div class="stat"><div class="label">净流动性 NetLiq</div><div class="value sensitive" id="netliq">—</div></div>
+      <div class="stat"><div class="label" title="AvailableFunds = NetLiq − 初始保证金. 你还能开多少新仓的钱. <10% 红, <20% 黄. (剩余流动性 ExcessLiq 用于看离 margin call 多远, 悬停数值可见)">可用资金</div><div class="value sensitive" id="availfunds">—</div></div>
+      <div class="stat"><div class="label" title="维持保证金÷净流动性. 越高杠杆越大">保证金占用率</div><div class="value" id="marginpct">—</div></div>
+      <div class="stat"><div class="label">整体仓位</div><div class="value" id="overallpct">—</div></div>
+      <div class="stat"><div class="label" title="Σ|每个大类敞口 USD| ÷ NetLiq. 最坏情况下全部大类同时逆风的账面敞口, 不假设任何跨大类对冲. 期权价差结构已按 strike 差算, 单边裸卖已按 case 算. >200% 警告, >150% 黄">最大风险敞口</div><div class="value sensitive" id="totalexpo">—</div></div>
+      <div class="stat"><div class="label" title="组合加权 beta (vs SPY)">组合 β</div><div class="value" id="pbeta">—</div></div>
+      <div class="stat"><div class="label" title="按底层计数 (同底层的ETF组合算1个, 如 YINN+YANG = A50 底层, 只计1次)">覆盖底层</div><div class="value" id="tickerct">—</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>大类资产 · 相对占比</h2>
+    <div id="pie-container"><canvas id="pie"></canvas></div>
+    <div style="color: var(--muted); font-size: 11px; margin-top: 10px; text-align:center">
+      饼图按绝对值计算（看方向看相对占比%数字）
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>大类资产 · 明细</h2>
+    <table id="classes-table">
+      <thead>
+        <tr>
+          <th>大类</th>
+          <th>市值 USD</th>
+          <th>绝对占比</th>
+          <th>相对占比</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+      <tfoot>
+        <tr class="class-row">
+          <td><b>总计</b></td>
+          <td id="foot-mv" class="sensitive">—</td>
+          <td id="foot-abs">—</td>
+          <td id="foot-rel">100.0%</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="card span-all">
+    <h2>💰 保证金占用分解
+      <span style="color:var(--muted);font-weight:400;text-transform:none;font-size:11px;margin-left:12px">
+        独立占用 = 这个仓单独拿出来、按标准公式要占多少 · 平仓可释放 = 平掉它 IBKR 实际退给你多少 · 盘中每8分钟刷新 · <span id="margin-updated"></span>
+      </span>
+    </h2>
+    <div id="margin-body" style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+      <div style="flex:0 0 280px">
+        <canvas id="marginPie" style="max-height:260px"></canvas>
+        <div id="margin-acct" style="text-align:center;font-size:12px;color:var(--muted);margin-top:10px"></div>
+      </div>
+      <div style="flex:1;min-width:380px">
+        <table id="margin-table">
+          <thead><tr><th>底层标的</th><th>大类</th>
+            <th style="text-align:right" title="Reg-T 标准公式: 这个仓单独持有、不考虑任何对冲时要占的维持保证金">独立占用</th>
+            <th style="text-align:right" title="IBKR whatIf: 把这个标的的全部腿一次平掉, 账户维持保证金实际下降多少">平仓可释放</th>
+            <th>说明</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <div id="margin-recon" style="font-size:12px;margin-top:10px;line-height:1.9"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card span-all">
+    <h2>个股负相关 (60日日收益率, TOP 15)</h2>
+    <div id="neg-pairs" style="font-size:12px;line-height:1.7;columns:2;column-gap:30px"></div>
+    <div style="color:var(--muted);font-size:11px;margin-top:8px">
+      已排除: 反向ETF (SQQQ/SPXS/YANG/TZA)、波动率类 (VIX/UVXY/SVIX)、同底层 (YINN/YANG 等) &nbsp;&nbsp; 仅展示个股/正向ETF之间的关系
+    </div>
+  </div>
+
+  <div class="card span-all">
+    <h2>逐标的明细 · 按大类分组 · 按绝对占比降序
+      <span style="color:var(--muted);font-weight:400;text-transform:none;font-size:11px;margin-left:12px">
+        市值 = Δ × 现价 × 杠杆系数, 做空型ETF符号已翻转
+      </span>
+    </h2>
+    <table id="tickers-table">
+      <thead>
+        <tr>
+          <th>标的</th>
+          <th title="原始β (yfinance vs SPY). 大类/组合β用 effective β=β×(inverse?-1:1)/leverage 加权">β</th>
+          <th>Δ</th>
+          <th>现价</th>
+          <th>市值 USD</th>
+          <th title="= 市值 ÷ 净流动性. 单只>30%视为过度集中(红色)">绝对占比</th>
+          <th title="下行/上行两边取大一边的股数,价差结构显示——">单边最大股数</th>
+          <th title="= 单边最大股数 × 现价; 若为期权价差结构则用strike差算最大本金损失">风险敞口 USD</th>
+          <th>敞口占比</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script>
+const fmtUsd = n => {
+  if (n===null||n===undefined||isNaN(n)) return '—';
+  const sign = n<0?'-':'';
+  return sign + '$' + Math.abs(n).toLocaleString('en-US', {maximumFractionDigits: 0});
+};
+const pct = n => (n===null||isNaN(n)) ? '—' : n.toFixed(1) + '%';
+const sign = n => n >= 0 ? 'positive' : 'negative';
+
+let pieChart = null;
+const hiddenClassIds = new Set();  // 饼图隐藏的大类 (与明细表同步)
+
+// 隐私模式
+function togglePrivacy() {
+  document.body.classList.toggle('hidden-amounts');
+  const on = document.body.classList.contains('hidden-amounts');
+  const btn = document.getElementById('privacy-btn');
+  btn.textContent = on ? '🔓 显示金额' : '🔒 隐私';
+  btn.classList.toggle('active', on);
+  try { localStorage.setItem('hiddenAmounts', on ? '1' : '0'); } catch (e) {}
+}
+// 启动时恢复
+(function initPrivacy() {
+  try {
+    if (localStorage.getItem('hiddenAmounts') === '1') {
+      document.body.classList.add('hidden-amounts');
+      // 按钮初始化在 DOM 准备好后
+      const apply = () => {
+        const btn = document.getElementById('privacy-btn');
+        if (btn) {
+          btn.textContent = '🔓 显示金额';
+          btn.classList.add('active');
+        }
+      };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', apply);
+      } else {
+        apply();
+      }
+    }
+  } catch (e) {}
+})();
+
+function applyHiddenClassDimming() {
+  // 同步 class 明细表的 dimmed 状态
+  document.querySelectorAll('[data-class-id]').forEach(el => {
+    if (hiddenClassIds.has(el.dataset.classId)) {
+      el.classList.add('dimmed');
+    } else {
+      el.classList.remove('dimmed');
+    }
+  });
+}
+
+// 多实例: /xi 页面从主实例转发接口取家人快照, 其余逻辑完全复用
+const IS_XI_PAGE = location.pathname.startsWith('/xi');
+const SNAPSHOT_API = IS_XI_PAGE ? '/api/snapshot_xi' : '/api/snapshot';
+if (IS_XI_PAGE) {
+  // nav 高亮从「持仓 Delta」挪到「家人持仓」
+  const a = document.getElementById('nav-delta'), b = document.getElementById('nav-xi-delta');
+  if (a && b) {
+    a.style.color = '#8893a6'; a.style.borderBottom = 'none';
+    b.style.color = '#e4e7eb'; b.style.borderBottom = '2px solid #f472b6'; b.style.paddingBottom = '4px';
+  }
+}
+
+async function load() {
+  try {
+    const r = await fetch(SNAPSHOT_API, {cache: 'no-store'});
+    if (!r.ok) {
+      const body = await r.json().catch(()=>({error:'unknown'}));
+      document.getElementById('updated').textContent = 'error: ' + body.error;
+      return;
+    }
+    const d = await r.json();
+    render(d);
+  } catch (e) {
+    document.getElementById('updated').textContent = 'fetch failed: ' + e;
+  }
+}
+
+function render(d) {
+  // FX hover 换算用 (fx_rates[ccy] = 1 USD 兑多少 ccy, longbridge 实时)
+  if (d.fx_rates && d.fx_rates.HKD) window.FX_RATES = d.fx_rates;
+  // 多实例: 第二实例(家人)的 snapshot 带 account_label, 标题加前缀便于区分两个看板
+  if (d.account_label) {
+    const h1 = document.querySelector('h1');
+    const want = d.account_label + ' · 持仓 Delta 看板';
+    if (h1 && h1.textContent !== want) { h1.textContent = want; document.title = want; }
+  }
+  // 清掉之前可能残留的 error 状态 (TWS 断连后又自动恢复时, 让 header 也跟着复位)
+  document.getElementById('updated').textContent = 'Updated ' + d.updated_at;
+  document.getElementById('updated').style.color = '';
+  // 可用资金 (AvailableFunds) = NetLiq − 初始保证金, 用于开仓决策
+  // 剩余流动性 (ExcessLiq) 作为辅助显示在 tooltip 里
+  const avail = d.available_funds_usd;
+  const netliq = d.net_liquidation_usd;
+  const availPct = (netliq && avail !== undefined) ? (avail / netliq * 100) : null;
+  const avEl = document.getElementById('availfunds');
+  if (avEl && avail !== undefined && avail !== null) {
+    avEl.textContent = fmtUsd(avail) + (availPct !== null ? ` (${availPct.toFixed(0)}%)` : '');
+    // <10% 红 (几乎开不出新仓), 10-20% 黄, >20% 正常
+    avEl.className = 'value sensitive ' + (availPct < 10 ? 'negative' : (availPct < 20 ? 'warn-color' : ''));
+    // tooltip: 补充显示剩余流动性
+    const excess = d.excess_liquidity_usd;
+    const excessPct = d.excess_liq_pct;
+    if (excess !== undefined) {
+      avEl.title = `可用资金 ${fmtUsd(avail)} (${availPct.toFixed(0)}% NetLiq) = 可开新仓\n剩余流动性 ${fmtUsd(excess)} (${excessPct.toFixed(0)}% NetLiq) = 离 margin call 的距离\n差额 = 初始保证金 vs 维持保证金的 buffer`;
+    }
+  }
+  const mgEl = document.getElementById('marginpct');
+  if (mgEl && d.margin_usage_pct !== undefined) {
+    mgEl.textContent = d.margin_usage_pct.toFixed(1) + '%';
+    mgEl.className = 'value ' + (d.margin_usage_pct > 70 ? 'negative' : (d.margin_usage_pct > 50 ? 'warn-color' : ''));
+  }
+  // Portfolio beta
+  const pb = d.portfolio_beta;
+  const pbEl = document.getElementById('pbeta');
+  if (pb !== undefined && pb !== null) {
+    pbEl.textContent = pb.toFixed(2);
+    pbEl.className = 'value ' + (pb > 1.3 ? 'negative' : (pb < 0.7 && pb > -0.3 ? 'warn-color' : (pb < 0 ? 'positive' : '')));
+  }
+  // Negative pairs
+  const npEl = document.getElementById('neg-pairs');
+  const negPairs = d.negative_pairs || [];
+  if (!npEl) {
+    // div not in DOM yet, skip (defensive)
+  } else if (negPairs.length === 0) {
+    npEl.innerHTML = '<span style="color:var(--muted)">stats 未计算 (启动后约30秒内生成)</span>';
+  } else {
+    npEl.innerHTML = negPairs.map(p => {
+      const c = p.correlation;
+      const color = c <= -0.5 ? 'var(--red)' : (c <= -0.3 ? 'var(--warn)' : 'var(--muted)');
+      return `<div style="break-inside:avoid"><b>${p.a}</b> ⇄ <b>${p.b}</b>
+         <span style="color:${color}">corr=${c.toFixed(3)}</span></div>`;
+    }).join('');
+  }
+  // Market state indicator
+  const ms = d.market_state || {};
+  const dot = (on) => `<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${on?'#10b981':'#6b7280'};margin-right:3px;vertical-align:middle"></span>`;
+  document.getElementById('market-state').innerHTML =
+    dot(ms.us_open) + 'US' + (ms.us_open?' OPEN':'') + ' &nbsp; ' +
+    dot(ms.hk_open) + 'HK' + (ms.hk_open?' OPEN':'');
+  document.getElementById('netliq').textContent = fmtUsd(d.net_liquidation_usd);
+  document.getElementById('overallpct').textContent = pct(d.overall_position_pct);
+  // 最大风险敞口(跨大类汇总)
+  const teEl = document.getElementById('totalexpo');
+  if (teEl && d.total_exposure_pct !== undefined) {
+    teEl.textContent = fmtUsd(d.total_exposure_usd) + ` (${d.total_exposure_pct.toFixed(0)}%)`;
+    // >200% 红, 150-200% 黄, 100-150% 正常淡红, <100% 正常
+    const tep = d.total_exposure_pct;
+    teEl.className = 'value sensitive ' + (tep > 200 ? 'negative' : (tep > 150 ? 'warn-color' : ''));
+  }
+
+  // Filter meaningful tickers (MV > $10)
+  const activeTickers = d.tickers.filter(t => Math.abs(t.market_value_usd) >= 10);
+  // 覆盖底层数 (同 underlying 的 YINN/YANG, QQQ/SQQQ, KORU/EWY 算一个)
+  const uniqueUnderlyings = new Set();
+  for (const t of activeTickers) {
+    uniqueUnderlyings.add(t.underlying || t.symbol);
+  }
+  const ctEl = document.getElementById('tickerct');
+  ctEl.textContent = uniqueUnderlyings.size;
+  ctEl.title = `${activeTickers.length} 只标的, 合并后 ${uniqueUnderlyings.size} 个底层`;
+
+  // Detect unclassified
+  const unclassified = activeTickers.filter(t => t.asset_class_id === 'UNCLASSIFIED');
+  const warnArea = document.getElementById('warning-area');
+  if (unclassified.length > 0) {
+    warnArea.innerHTML = `
+      <div class="warning-banner">
+        ⚠️ <b>${unclassified.length} 只新标的未分类</b>:
+        ${unclassified.map(t => `<code>${t.symbol}</code>`).join(' ')}
+        &nbsp;&nbsp;→ 请到 <code>config.yaml</code> 的 <code>tickers:</code> 里添加归类
+      </div>`;
+  } else {
+    warnArea.innerHTML = '';
+  }
+
+  // ==== 大类数据准备 ====
+  // 计算相对占比: 以有持仓的大类为分母
+  const activeClasses = d.asset_classes.filter(c => Math.abs(c.market_value_usd) >= 10);
+  const totalAbsMv = activeClasses.reduce((s, c) => s + Math.abs(c.market_value_usd), 0);
+  const totalSignedMv = activeClasses.reduce((s, c) => s + c.market_value_usd, 0);
+
+  // relative% = mv / |总绝对市值| (so negatives become negative share)
+  const classesWithRel = activeClasses.map(c => ({
+    ...c,
+    relative_pct: totalAbsMv > 0 ? (c.market_value_usd / totalAbsMv * 100) : 0,
+  }));
+
+  // ==== 饼图 ====
+  if (pieChart) pieChart.destroy();
+  const ctx = document.getElementById('pie').getContext('2d');
+  pieChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: classesWithRel.map(c => c.name),
+      datasets: [{
+        data: classesWithRel.map(c => Math.abs(c.market_value_usd)),
+        backgroundColor: classesWithRel.map(c => c.color),
+        borderColor: '#151b26',
+        borderWidth: 2,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '55%',
+      plugins: {
+        legend: {
+          position: 'right',
+          onClick: (e, legendItem, legend) => {
+            const chart = legend.chart;
+            const idx = legendItem.index;
+            const classId = classesWithRel[idx].id;
+            // 切换可见性
+            chart.toggleDataVisibility(idx);
+            if (chart.getDataVisibility(idx)) {
+              hiddenClassIds.delete(classId);
+            } else {
+              hiddenClassIds.add(classId);
+            }
+            chart.update();
+            applyHiddenClassDimming();
+          },
+          labels: {
+            color: '#e4e7eb',
+            font: { size: 11 },
+            generateLabels: (chart) => {
+              return classesWithRel.map((c, i) => {
+                const hidden = !chart.getDataVisibility(i);
+                return {
+                  text: `${c.name}  ${c.relative_pct.toFixed(1)}%`,
+                  fillStyle: c.color,
+                  strokeStyle: '#151b26',
+                  lineWidth: 1,
+                  fontColor: hidden ? '#4a5568' : (c.relative_pct >= 0 ? '#e4e7eb' : '#ef4444'),
+                  hidden: hidden,  // chart.js会自动加删除线
+                  index: i,
+                };
+              });
+            },
+          },
+        },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const c = classesWithRel[ctx.dataIndex];
+              // 隐私模式: 金额遮罩, %保留 (%本身不暴露规模)
+              const isHidden = document.body.classList.contains('hidden-amounts');
+              const mvStr = isHidden ? '***' : fmtUsd(c.market_value_usd);
+              return `${c.name}: ${mvStr} | 绝对${pct(c.position_pct)} | 相对${pct(c.relative_pct)}`;
+            },
+          },
+        },
+      },
+    },
+  });
+
+  // 隐藏状态恢复 (跨render周期持久)
+  classesWithRel.forEach((c, i) => {
+    if (hiddenClassIds.has(c.id)) {
+      pieChart.toggleDataVisibility(i);
+    }
+  });
+  pieChart.update();
+  // 应用 class 表的 dimmed 状态 (在 class 表和 ticker 表渲染完后由 render 最后调用)
+  setTimeout(applyHiddenClassDimming, 50);
+
+  // ==== 大类明细表 ====
+  const ctb = document.querySelector('#classes-table tbody');
+  ctb.innerHTML = '';
+  const maxAbsClass = Math.max(...classesWithRel.map(c => Math.abs(c.position_pct)), 1);
+  for (const c of classesWithRel) {
+    const tr = document.createElement('tr');
+    tr.dataset.classId = c.id;
+    tr.innerHTML = `
+      <td><span class="class-tag" style="background:${c.color}"></span>${c.name}</td>
+      <td class="${sign(c.market_value_usd)} sensitive">${fmtUsd(c.market_value_usd)}</td>
+      <td class="${sign(c.position_pct)}">${pct(c.position_pct)}</td>
+      <td class="${sign(c.relative_pct)}"><b>${pct(c.relative_pct)}</b></td>`;
+    ctb.appendChild(tr);
+  }
+  document.getElementById('foot-mv').textContent = fmtUsd(totalSignedMv);
+  document.getElementById('foot-abs').textContent = pct(totalSignedMv / d.net_liquidation_usd * 100);
+  document.getElementById('foot-abs').className = sign(totalSignedMv);
+  const relSum = classesWithRel.reduce((s, c) => s + c.relative_pct, 0);
+  document.getElementById('foot-rel').textContent = pct(relSum);
+
+  // ==== 逐标的明细 ====
+  const ttb = document.querySelector('#tickers-table tbody');
+  ttb.innerHTML = '';
+
+  // 按大类分组,大类按绝对占比降序
+  const classIdOrder = [...classesWithRel]
+    .sort((a, b) => Math.abs(b.position_pct) - Math.abs(a.position_pct))
+    .map(c => c.id);
+  // 无持仓的大类放最后
+  for (const cid of d.asset_classes.map(c => c.id)) {
+    if (!classIdOrder.includes(cid)) classIdOrder.push(cid);
+  }
+
+  const byClass = {};
+  for (const t of activeTickers) {
+    (byClass[t.asset_class_id] = byClass[t.asset_class_id] || []).push(t);
+  }
+  // 每个大类内按绝对占比降序
+  for (const key in byClass) {
+    byClass[key].sort((a, b) => Math.abs(b.position_pct) - Math.abs(a.position_pct));
+  }
+
+  const maxAbsTicker = Math.max(...activeTickers.map(t => Math.abs(t.position_pct)), 1);
+
+  for (const cid of classIdOrder) {
+    const items = byClass[cid];
+    if (!items || items.length === 0) continue;
+    const cls = classesWithRel.find(c => c.id === cid) ||
+                d.asset_classes.find(c => c.id === cid);
+    const clsMv = cls.market_value_usd || 0;
+    const clsAbsPct = cls.position_pct || 0;
+    const clsRelPct = cls.relative_pct !== undefined ? cls.relative_pct : 0;
+
+    // 类层面敞口: 后端已按 underlying 组内取max处理 (对冲配对只计一边)
+    const clsExpo = cls.exposure_usd || 0;
+    const clsExpoPct = cls.exposure_pct || 0;
+
+    const clsTr = document.createElement('tr');
+    clsTr.className = 'class-row';
+    clsTr.dataset.classId = cls.id;
+    // class-row 用 绝对占比 + |相对占比| 双数字展示
+    const relSuffix = clsRelPct !== undefined && clsRelPct !== null
+      ? ` <span style="color:var(--muted);font-size:10px;font-weight:400">相对${pct(clsRelPct)}</span>`
+      : '';
+    // class-level weighted beta (用 effective_β + signed MV,自动处理对冲抵消)
+    // 分子: Σ(signed_MV × effective_β), 分母: Σ|signed_MV|
+    let clsBetaNum = 0, clsBetaWeight = 0;
+    for (const tt of items) {
+      if (tt.effective_beta !== null && tt.effective_beta !== undefined) {
+        clsBetaNum += tt.market_value_usd * tt.effective_beta;
+        clsBetaWeight += Math.abs(tt.market_value_usd);
+      }
+    }
+    const clsBeta = clsBetaWeight > 0 ? (clsBetaNum / clsBetaWeight) : null;
+    const clsBetaStr = clsBeta !== null ? clsBeta.toFixed(2) : '—';
+
+    clsTr.innerHTML = `
+      <td><span class="class-tag" style="background:${cls.color}"></span>${cls.name}
+        <span style="color:var(--muted);font-size:10px;font-weight:400">${items.length}只</span></td>
+      <td><b>${clsBetaStr}</b></td>
+      <td></td>
+      <td></td>
+      <td class="${sign(clsMv)} sensitive">${fmtUsd(clsMv)}</td>
+      <td class="${sign(clsAbsPct)}"><b>${pct(clsAbsPct)}</b>${relSuffix}</td>
+      <td></td>
+      <td class="sensitive">${fmtUsd(clsExpo)}</td>
+      <td>${pct(clsExpoPct)}</td>`;
+    ttb.appendChild(clsTr);
+
+    // 找出本类中同 underlying 的配对
+    const underlyingMembers = {};
+    for (const tt of items) {
+      if (tt.underlying) {
+        (underlyingMembers[tt.underlying] = underlyingMembers[tt.underlying] || []).push(tt.symbol);
+      }
+    }
+
+    for (const t of items) {
+      const tr = document.createElement('tr');
+      tr.className = 'ticker-row';
+      tr.dataset.classId = cls.id;
+      const absP = Math.abs(t.position_pct);
+      const inv = t.inverse ? '<span class="inverse-flag">inverse</span>' : '';
+      const lev = t.leverage > 1 ? `<span class="lev-flag">×${t.leverage}</span>` : '';
+      // pair标签: 同class+同underlying有多于1个成员才显示
+      let pair = '';
+      if (t.underlying && underlyingMembers[t.underlying] && underlyingMembers[t.underlying].length > 1) {
+        const others = underlyingMembers[t.underlying].filter(s => s !== t.symbol);
+        pair = `<span class="pair-flag" title="与${others.join('/')}对冲同底层 ${t.underlying}, 敞口在类汇总时取MAX">⇄${t.underlying}</span>`;
+      }
+      const nameClass = t.asset_class_id === 'UNCLASSIFIED' ? 'ticker-unclassified' : '';
+      const mssDisplay = t.max_shares_single_side == null
+        ? '<span style="color:var(--muted)" title="净买方,不计算">—</span>'
+        : Math.round(t.max_shares_single_side).toLocaleString();
+      const caseTip = {
+        'case0': '纯正股/完全对冲',
+        'case1': '纯期权 (取下行/上行最大一边; 价差用strike差算)',
+        'case2': '正股+期权 (下行=正股+净短put, 上行=裸短call超出部分, 取大)',
+        'case3': '净期权买方 (敞口=权利金)',
+      }[t.risk_case] || '';
+      // 绝对占比用颜色反映集中度: <15%正常/15-30%黄/>30%红
+      const absPctClass = absP >= 30 ? 'negative' : (absP >= 15 ? 'warn-color' : sign(t.position_pct));
+      // beta coloring: 高β顺周期红 / 负β逆周期绿 / 接近0的黄(好的hedge)
+      let betaDisplay = '—';
+      let betaCls = '';
+      let betaTip = '';
+      if (t.beta !== null && t.beta !== undefined) {
+        betaDisplay = t.beta.toFixed(2);
+        if (t.beta < 0) betaCls = 'positive';
+        else if (t.beta > 1.5) betaCls = 'negative';
+        else if (Math.abs(t.beta) < 0.3) betaCls = 'warn-color';
+        betaTip = (t.beta_source || '') + ' beta';
+        if (t.effective_beta !== undefined && t.effective_beta !== null && Math.abs(t.effective_beta - t.beta) > 0.01) {
+          betaTip += ` · 底层等价β=${t.effective_beta.toFixed(2)}`;
+        }
+      }
+      const expoCell = t.in_hedge_group && !t.is_dominant_in_group ? '<s>' + fmtUsd(t.max_exposure_usd) + '</s>' : fmtUsd(t.max_exposure_usd);
+      // 敞口占比颜色: >=50% 红, >=30% 黄
+      const ep = Math.abs(t.max_exposure_pct || 0);
+      const expoPctClass = ep >= 50 ? 'negative' : (ep >= 30 ? 'warn-color' : '');
+      // 持仓建议图标 (CSS气泡tooltip, 悬停立即显示)
+      const suggestionIcons = (t.suggestions || []).map(s => {
+        const tip = (s.title + '\n\n' + s.detail).replace(/"/g, '&quot;');
+        return `<span class="suggestion-flag" data-tooltip="${tip}">${s.icon}</span>`;
+      }).join('');
+      tr.innerHTML = `
+        <td class="${nameClass}">${t.symbol}${inv}${lev}${pair}${suggestionIcons}</td>
+        <td class="${betaCls}" title="${betaTip}">${betaDisplay}</td>
+        <td class="sensitive">${t.total_delta ? t.total_delta.toFixed(1) : '—'}</td>
+        <td>${t.underlying_price ? t.underlying_price.toFixed(2) : '—'}</td>
+        <td class="${sign(t.market_value_usd)} sensitive">${fmtUsd(t.market_value_usd)}</td>
+        <td class="${absPctClass}" title="${absP >= 30 ? '⚠️过度集中>30%' : (absP >= 15 ? '中等集中15-30%' : '')}"><b>${pct(t.position_pct)}</b></td>
+        <td class="sensitive" title="${caseTip}">${mssDisplay}</td>
+        <td class="sensitive ${t.in_hedge_group && !t.is_dominant_in_group ? 'suppressed' : ''}"
+            title="${t.in_hedge_group && !t.is_dominant_in_group
+              ? `类汇总时已忽略 (${t.dominant_symbol} 敞口更大, 同${t.group_members[0] ? '组' : '底层'}只取MAX)`
+              : caseTip}">${expoCell}</td>
+        <td class="${expoPctClass} ${t.in_hedge_group && !t.is_dominant_in_group ? 'suppressed' : ''}"
+            title="${ep >= 50 ? '⚠️ 风险敞口>50%, 高度集中' : (ep >= 30 ? '⚠️ 风险敞口>30%, 中度集中' : '')}">
+          ${t.in_hedge_group && !t.is_dominant_in_group ? '<s>' + pct(t.max_exposure_pct) + '</s>' : '<b>' + pct(t.max_exposure_pct) + '</b>'}
+        </td>`;
+      ttb.appendChild(tr);
+    }
+  }
+}
+
+// === 浮动tooltip: 自适应视口位置 (不会溢出屏幕) ===
+(function setupTooltip() {
+  const tip = document.getElementById('floating-tooltip');
+  if (!tip) return;
+
+  // 隐私模式: tooltip 里的"X 股 / X 张"这类持仓数量打码 (保留 strike/delta/天数, 因为它们不直接暴露持仓规模)
+  function maskSensitiveQuantities(s) {
+    if (!document.body.classList.contains('hidden-amounts')) return s;
+    // 数字 (含小数+千分位) 后跟 股/张/手 → 数字部分替换成 ***
+    return s.replace(/\d[\d,]*(?:\.\d+)?\s*(股|张|手)/g, '*** $1');
+  }
+
+  document.addEventListener('mouseover', (e) => {
+    const flag = e.target.closest('.suggestion-flag');
+    if (!flag) return;
+    const content = flag.dataset.tooltip || '';
+    if (!content) return;
+    tip.textContent = maskSensitiveQuantities(content);
+    tip.style.display = 'block';
+    positionTip(flag);
+  });
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest('.suggestion-flag')) {
+      tip.style.display = 'none';
+    }
+  });
+
+  // FX hover: 悬停任意美元金额 (.sensitive 且含 $) → 浮动框显示 HKD/CNY 换算
+  // 与 balance 页交互一致; delta/股数等无 $ 的 sensitive 元素自动跳过
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest('.suggestion-flag')) return;  // 建议图标优先走上面的逻辑
+    const el = e.target.closest('.sensitive');
+    if (!el) return;
+    const fx = window.FX_RATES;
+    if (!fx || !fx.HKD) return;
+    const m = (el.textContent || '').match(/(-?)\$([\d,]+(?:\.\d+)?)/);
+    if (!m) return;
+    const usd = (m[1] ? -1 : 1) * parseFloat(m[2].replace(/,/g, ''));
+    if (isNaN(usd)) return;
+    const f = v => (v < 0 ? '-' : '') + Math.abs(v).toLocaleString('en-US', {maximumFractionDigits: 0});
+    tip.textContent = `≈ HK$${f(usd * fx.HKD)} · ¥${f(usd * (fx.CNY || 0))}`;
+    tip.style.display = 'block';
+    positionTip(el);
+  });
+  document.addEventListener('mouseout', (e) => {
+    if (!e.target.closest('.suggestion-flag') && e.target.closest('.sensitive')) {
+      tip.style.display = 'none';
+    }
+  });
+
+  function positionTip(flag) {
+    const rect = flag.getBoundingClientRect();
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    // 先让浏览器渲染好,再读取tooltip尺寸
+    tip.style.left = '0px'; tip.style.top = '0px';
+    const tr = tip.getBoundingClientRect();
+    // 默认: 图标下方, 左对齐
+    let x = rect.left;
+    let y = rect.bottom + 8;
+    // 右侧溢出 → 右对齐图标
+    if (x + tr.width > vw - 12) {
+      x = rect.right - tr.width;
+    }
+    if (x < 8) x = 8;
+    // 下方溢出 → 移到图标上方
+    if (y + tr.height > vh - 12) {
+      y = rect.top - tr.height - 8;
+    }
+    if (y < 8) y = 8;
+    tip.style.left = x + 'px';
+    tip.style.top = y + 'px';
+  }
+})();
+
+load();
+setInterval(load, 30000);
+
+// ===== 保证金占用分解 (独立 fetch /api/margin, 不耦合 snapshot render) =====
+let marginChart = null;
+const MARGIN_COLORS = {
+  '美股科技&大盘':'#3b82f6','美债':'#eab308','贵金属':'#a855f7','加密货币':'#f97316',
+  '原油':'#78350f','CN资产':'#ef4444','其他-低beta':'#10b981','题材成长-高beta':'#ec4899','未分类':'#6b7280'
+};
+const dot = c => `<span style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;background:${c}"></span>`;
+async function loadMargin() {
+  // 家人页(只读账号无 whatIf)不显示保证金分解 — 这块是主账户专属, 别混进家人页
+  const marginCard = document.getElementById('margin-body')?.closest('.card');
+  if (IS_XI_PAGE) { if (marginCard) marginCard.style.display = 'none'; return; }
+  try {
+    const r = await fetch('/api/margin', {cache:'no-store'});
+    const upd = document.getElementById('margin-updated');
+    if (!r.ok) { const e = await r.json().catch(()=>({error:'?'})); if (upd) upd.textContent = e.error || '暂无'; return; }
+    const d = await r.json();
+    if (upd) upd.textContent = 'Updated ' + (d.updated_at || '');
+    const acctEl = document.getElementById('margin-acct');
+    if (acctEl) acctEl.innerHTML = `账户实际维持保证金 <b class="sensitive">${fmtUsd(d.account_maint_usd)}</b><br><span style="font-size:11px">饼图 = 这笔钱的真实拆分(含组合共用)</span>`;
+    // 饼图: 各大类「平仓可释放」(负值按0) + 「组合共用」, 加总 = 账户实际维持保证金
+    const slices = (d.by_class || []).filter(c => (c.release_pos_usd||0) > 0)
+      .map(c => ({label: c.asset_class, v: c.release_pos_usd, pct: c.pct, color: MARGIN_COLORS[c.asset_class]||'#6b7280'}));
+    if ((d.shared_pos_usd||0) > 0) slices.push({label:'组合共用', v: d.shared_pos_usd, pct: d.shared_pos_pct, color:'#475569'});
+    const ctx = document.getElementById('marginPie');
+    if (ctx) {
+      const data = { labels: slices.map(x=>x.label), datasets:[{
+        data: slices.map(x=>x.v), backgroundColor: slices.map(x=>x.color),
+        borderColor:'#151b26', borderWidth:1 }] };
+      if (marginChart) { marginChart.data = data; marginChart.update(); }
+      else marginChart = new Chart(ctx, { type:'doughnut', data, options:{
+        plugins:{ legend:{ position:'bottom', labels:{ color:'#e4e7eb', font:{size:11}, padding:8 } },
+          tooltip:{ callbacks:{ label:(c)=>{
+            const isH = document.body.classList.contains('hidden-amounts');
+            const v = (marginChart && marginChart.$slices || slices)[c.dataIndex];
+            return `${v.label}: ${isH?'***':fmtUsd(v.v)} (${v.pct}%)`;
+          }}}}}});
+      marginChart.$slices = slices;
+    }
+    // 表: 每标的 = 独立占用 + 平仓可释放 + 说明 (按独立占用降序)
+    const tb = document.querySelector('#margin-table tbody');
+    if (tb) {
+      tb.innerHTML = '';
+      for (const row of (d.by_symbol || [])) {
+        const rel = row.release_usd;
+        const relTxt = rel === null || rel === undefined ? '—' : fmtUsd(rel);
+        const relCls = (rel !== null && rel !== undefined && rel <= 0) ? 'positive' : '';
+        const saTxt = row.standalone_usd === null || row.standalone_usd === undefined ? '—' : fmtUsd(row.standalone_usd);
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${dot(MARGIN_COLORS[row.asset_class]||'#6b7280')}${row.symbol}</td>
+          <td style="color:var(--muted)">${row.asset_class}</td>
+          <td style="text-align:right" class="sensitive">${saTxt}</td>
+          <td style="text-align:right" class="sensitive ${relCls}" title="${row.release_method||''}">${relTxt}</td>
+          <td style="color:var(--muted);font-size:11px">${row.note||''}</td>`;
+        tb.appendChild(tr);
+      }
+    }
+    // 对账: 两个口径 vs 账户实际
+    const rec = document.getElementById('margin-recon');
+    if (rec) {
+      const S = v => `<b class="sensitive">${fmtUsd(v)}</b>`;
+      rec.innerHTML =
+        (d.standalone_complete === false
+          ? `<div style="color:var(--muted)">部分标的缺现价，独立占用合计暂不完整（下一轮自动补齐）</div>`
+          : `<div>各仓<b>独立占用</b>合计 ${S(d.sum_standalone_usd)} → 账户实际只收 ${S(d.account_maint_usd)}，<span style="color:#10b981">组合保证金帮你省了 ${S(d.pm_savings_usd)}</span></div>`) +
+        `<div style="color:var(--muted)">各仓<b>平仓可释放</b>合计 ${S(d.sum_release_pos_usd)} → 剩下 ${S(d.shared_pos_usd)} 是<b>组合共用</b>：单平任一仓都释放不了，对冲两边一起平才释放（SQQQ↔TQQQ 这类）</div>`;
+    }
+  } catch(e) { const upd=document.getElementById('margin-updated'); if(upd) upd.textContent='fetch failed'; }
+}
+loadMargin();
+setInterval(loadMargin, 60000);
+</script>
+</body>
+</html>

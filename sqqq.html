@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SQQQ 卖CALL 安全张数计算器</title>
+<style>
+  :root{
+    --bg:#0b0f15; --bg-card:#151b26; --bg-inset:#0e131c; --border:#2a3446;
+    --text:#eef1f5; --muted:#aab3c4; --faint:#8b95a8;
+    --green:#22c58a; --red:#f26d6d; --warn:#f5a524; --blue:#6aa8ff; --violet:#a78bfa;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);}
+  .topnav{ padding:14px 22px; border-bottom:1px solid var(--border); background:var(--bg);
+    font-size:13px; color:var(--text); font-family:-apple-system,"Segoe UI","PingFang SC",sans-serif;}
+  .topnav b{ margin-right:20px; font-size:15px;}
+  .topnav a{ color:var(--muted); text-decoration:none; margin-right:14px;}
+  .topnav a.active{ color:var(--text); border-bottom:2px solid var(--blue); padding-bottom:4px;}
+  .wrap{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,"Segoe UI","PingFang SC",sans-serif; font-size:13px;
+    min-height:100vh; padding:0 0 40px;
+  }
+  .hd{ padding:16px 22px; border-bottom:1px solid var(--border); display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;}
+  .hd h1{ margin:0; font-size:16px; font-weight:600; }
+  .hd .sub{ color:var(--muted); font-size:12px; }
+
+  .grid{ display:grid; grid-template-columns: 340px 1fr; gap:18px; padding:20px 22px; align-items:start;}
+  @media (max-width:860px){ .grid{ grid-template-columns:1fr; } }
+  .card{ background:var(--bg-card); border:1px solid var(--border); border-radius:8px; padding:16px 18px;}
+  .card h2{ margin:0 0 14px; font-size:11px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.6px;}
+
+  .field{ margin-bottom:15px; }
+  .field label{ display:block; color:var(--muted); font-size:11.5px; margin-bottom:5px;}
+  .field label .hint{ color:var(--faint); font-weight:400; }
+  .inrow{ display:flex; gap:8px; align-items:stretch;}
+  input[type=number]{
+    width:100%; background:var(--bg-inset); border:1px solid var(--border); color:var(--text);
+    border-radius:5px; padding:8px 10px; font-size:14px; font-variant-numeric:tabular-nums;
+    font-family:inherit;
+  }
+  input[type=number]:focus{ outline:none; border-color:var(--blue); }
+  .seg{ display:flex; border:1px solid var(--border); border-radius:5px; overflow:hidden; }
+  .seg button{ background:var(--bg-inset); color:var(--muted); border:none; padding:8px 12px;
+    font-size:12px; cursor:pointer; font-family:inherit; }
+  .seg button.on{ background:rgba(106,168,255,.18); color:var(--blue); }
+
+  input[type=range]{ -webkit-appearance:none; width:100%; height:5px; border-radius:3px;
+    background:linear-gradient(90deg,var(--green),var(--warn),var(--red)); outline:none; margin:8px 0 4px;}
+  input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; width:17px; height:17px; border-radius:50%;
+    background:#fff; border:3px solid var(--blue); cursor:pointer; box-shadow:0 0 0 2px var(--bg-card);}
+  .slabels{ display:flex; justify-content:space-between; color:var(--faint); font-size:10px; }
+
+  .hero{ display:flex; align-items:center; gap:22px; margin-bottom:6px; flex-wrap:wrap;}
+  .hero .big{ font-size:62px; font-weight:700; line-height:1; color:var(--blue); font-variant-numeric:tabular-nums;}
+  .hero .big .unit{ font-size:20px; color:var(--muted); font-weight:500; margin-left:6px;}
+  .hero .ctx{ font-size:12px; color:var(--text); line-height:1.7; max-width:520px;}
+  .hero .ctx b{ color:#fff; font-weight:600; }
+
+  .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:16px 0 4px;}
+  .kpi{ background:var(--bg-inset); border:1px solid var(--border); border-radius:6px; padding:10px 12px;}
+  .kpi .k{ color:var(--muted); font-size:10.5px; margin-bottom:4px;}
+  .kpi .v{ font-size:17px; font-weight:600; font-variant-numeric:tabular-nums;}
+  @media (max-width:520px){ .kpis{ grid-template-columns:repeat(2,1fr);} }
+
+  .split-title{ color:var(--muted); font-size:11px; margin:18px 0 7px; text-transform:uppercase; letter-spacing:.5px;}
+  .bar{ display:flex; height:34px; border-radius:6px; overflow:hidden; border:1px solid var(--border); font-size:12px; font-weight:600;}
+  .bar .seg-loss{ background:rgba(242,109,109,.34); color:#ffc4c4; display:flex; align-items:center; justify-content:center; gap:6px;}
+  .bar .seg-mrg{ background:rgba(106,168,255,.30); color:#d6e6ff; display:flex; align-items:center; justify-content:center; gap:6px;}
+  .barleg{ display:flex; gap:18px; margin-top:8px; color:var(--muted); font-size:11px; align-items:center;}
+  .barleg .dot{ display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:5px; vertical-align:middle;}
+
+  .rent{ display:flex; align-items:center; gap:14px; margin-top:16px; padding:13px 16px;
+    background:rgba(34,197,138,.08); border:1px solid rgba(34,197,138,.3); border-radius:7px; flex-wrap:wrap;}
+  .rent .lab{ color:var(--muted); font-size:11.5px;}
+  .rent .amt{ font-size:18px; font-weight:600; color:var(--green); font-variant-numeric:tabular-nums;}
+  .rent .ann{ margin-left:auto; text-align:right;}
+  .rent .ann .k{ color:var(--muted); font-size:10.5px;}
+  .rent .ann .v{ font-size:26px; font-weight:700; color:var(--green); font-variant-numeric:tabular-nums; line-height:1.1;}
+
+  table{ width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums; margin-top:4px;}
+  th,td{ padding:8px 9px; text-align:right; border-bottom:1px solid var(--border); font-size:12px;}
+  th{ color:#c2cad6; font-size:10.5px; font-weight:600; text-transform:uppercase; letter-spacing:.4px;}
+  td{ color:var(--text); }
+  td:first-child,th:first-child{ text-align:left; }
+  td.ref{ color:var(--muted); }
+  tr.cur{ background:rgba(106,168,255,.12); }
+  tr.cur td:first-child{ color:var(--blue); font-weight:600; }
+  .tag{ font-size:9px; padding:1px 5px; border-radius:3px; margin-left:6px; }
+  .tag.g{ color:var(--green); background:rgba(34,197,138,.16);}
+  .tag.w{ color:var(--warn); background:rgba(245,165,36,.16);}
+  .tag.r{ color:var(--red); background:rgba(242,109,109,.16);}
+
+  .note{ color:var(--text); font-size:11.5px; line-height:1.8; }
+  .note code{ background:var(--bg-inset); padding:1px 6px; border-radius:3px; color:#dbe6ff;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px;}
+  .note b{ color:#fff;}
+  .danger{ color:var(--red); } .safe{ color:var(--green);} .warnc{ color:var(--warn);}
+  .foot{ padding:4px 22px; color:var(--faint); font-size:10.5px;}
+</style>
+</head>
+<body><div style="background:#1f2937;color:#fbbf24;font-size:12px;padding:6px 20px;border-bottom:1px solid #374151">演示数据 · 金额按统一系数缩放、名称已脱敏，结构与计算口径与真实看板一致 · 仅用于展示，不构成任何投资建议</div>
+
+<div class="topnav">
+  <b>持仓 Delta 看板</b>
+  <a href="holdings.html">📊 持仓 Delta</a>
+  <a href="holdings.html">👩 家人持仓</a>
+  <a href="balance.html">💼 我的资产</a>
+  <a href="balance_xi.html">👰 家人资产</a>
+  <a href="balance_family.html">🏠 家庭资产</a>
+  <a href="sqqq.html" class="active">🧨 SQQQ压测</a>
+  <a href="docs.html">📖 计算口径</a>
+</div>
+
+<div class="wrap">
+  <div class="hd">
+    <h1>SQQQ 卖 CALL · 安全张数计算器</h1>
+    <span class="sub">按「历史最恶劣暴跌」压测，反推不爆仓的卖出张数 + 资金年化</span>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>参数</h2>
+
+      <div class="field">
+        <label>本金 <span class="hint">· 账户总额</span></label>
+        <div class="inrow">
+          <input type="number" id="principal" value="300000" step="10000">
+          <div class="seg">
+            <button id="cur-hkd" class="on" onclick="setCur('HKD')">HKD</button>
+            <button id="cur-usd" onclick="setCur('USD')">USD</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="field" id="fx-field">
+        <label>汇率 USD/HKD <span class="hint">· 联系汇率 7.75–7.85</span></label>
+        <input type="number" id="fx" value="7.8" step="0.01">
+      </div>
+
+      <div class="field">
+        <label>SQQQ 现价</label>
+        <input type="number" id="spot" value="38" step="0.01">
+      </div>
+
+      <div class="field">
+        <label>行权价 <span class="hint">· 选 Delta≈0.20 那档</span></label>
+        <input type="number" id="strike" value="50" step="1">
+      </div>
+
+      <div class="field">
+        <label>建仓权利金 <span class="hint">· 每股，填盘口 bid 实收价</span></label>
+        <input type="number" id="premium" value="1.06" step="0.05">
+      </div>
+
+      <div class="field">
+        <label>到期天数 <span class="hint">· 用于年化，如 9/18 到期填 44</span></label>
+        <input type="number" id="dte" value="44" step="1">
+      </div>
+
+      <div class="field">
+        <label>防御等级 · 最坏 SQQQ 涨到 <b id="mult-lab" style="color:var(--blue)">×2.1</b></label>
+        <input type="range" id="mult" min="1.5" max="2.6" step="0.05" value="2.1">
+        <div class="slabels"><span>温和 ×1.5</span><span>2020级 ×2.0</span><span>2008级 ×2.1</span><span>末日 ×2.6</span></div>
+      </div>
+
+      <div class="field">
+        <label>安全系数 <span class="hint">· 只用本金的这个比例</span> <b id="sf-lab" style="color:var(--blue)">0.80</b></label>
+        <input type="range" id="sf" min="0.5" max="1" step="0.05" value="0.8">
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <h2>结论</h2>
+        <div class="hero">
+          <div class="big"><span id="out-n">9</span><span class="unit">张</span></div>
+          <div class="ctx" id="out-ctx"></div>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi"><div class="k">最坏 SQQQ 价</div><div class="v" id="k-worst">—</div></div>
+          <div class="kpi"><div class="k">对应 QQQ 跌幅</div><div class="v danger" id="k-qqq">—</div></div>
+          <div class="kpi"><div class="k">每张占用</div><div class="v" id="k-per">—</div></div>
+          <div class="kpi"><div class="k">你的实际强平价</div><div class="v warnc" id="k-blow">—</div></div>
+        </div>
+
+        <div class="split-title">每张 <span id="per2">7,600</span> 刀是怎么占用的</div>
+        <div class="bar">
+          <div class="seg-loss" id="bar-loss" style="width:40%">浮亏 <span id="bl">3,000</span></div>
+          <div class="seg-mrg" id="bar-mrg" style="width:60%">维持保证金 <span id="bm">4,600</span></div>
+        </div>
+        <div class="barleg">
+          <span><span class="dot" style="background:rgba(242,109,109,.7)"></span>浮亏 = 你已实亏的</span>
+          <span><span class="dot" style="background:rgba(106,168,255,.7)"></span>保证金 = 券商冻结的</span>
+        </div>
+
+        <div class="rent">
+          <div>
+            <div class="lab">本批收租 = 张数 × 权利金 × 100</div>
+            <div class="amt" id="rent">$—</div>
+          </div>
+          <div class="ann">
+            <div class="k">资金年化 · 对本金</div>
+            <div class="v" id="ann">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px;">
+        <h2>不同防御等级 → 安全张数</h2>
+        <table>
+          <thead><tr><th>防御等级</th><th>SQQQ 涨到</th><th>≈QQQ 跌</th><th>历史参照</th><th>每张占用</th><th>安全张数</th></tr></thead>
+          <tbody id="scentbody"></tbody>
+        </table>
+      </div>
+
+      <div class="card" style="margin-top:18px;">
+        <h2>口诀原理 · 为什么有个 0.2×压力价</h2>
+        <div class="note">
+          每张占用 = <code>[2×(压力价−行权价) + 0.2×压力价] × 100</code>，拆成两半：<br>
+          &nbsp;&nbsp;① <b>浮亏</b> = (压力价−行权价)：CALL 变深度实值，你低价卖出、要高价买回。<br>
+          &nbsp;&nbsp;② <b>维持保证金</b> = (压力价−行权价) + <b class="warnc">0.2×压力价</b>：券商冻结的钱。<br><br>
+          那个 <b class="warnc">0.2×压力价</b> 是保证金里的<b>「再波动一次」缓冲垫</b>——券商假设标的还可能再往不利方向动约 20%,提前冻结防你穿仓。它按<b>标的现价</b>算比例,所以<b>标的涨得越高、垫越厚</b>。内在价值被算两遍(浮亏 + 保证金各一次,即「2×」)+ 缓冲垫随价膨胀 → 这就是裸卖 CALL 被深度突破后资金消耗<b>加速</b>的原因。
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">压测为「历史最恶劣 30–45 天暴跌」情景，深度实值近似；实盘 IB house margin 可能更严、强平在最差时点执行，结果偏乐观。年化按「对本金」口径 = 本批收租 ÷ 本金 × 365÷到期天数。仅作仓位上限参考。</div>
+</div>
+
+<script>
+(function(){
+  var cur='HKD';
+  var $=function(id){return document.getElementById(id);};
+  function setCur(c){ cur=c; $('cur-hkd').classList.toggle('on',c==='HKD'); $('cur-usd').classList.toggle('on',c==='USD');
+    $('fx-field').style.display = c==='HKD'?'block':'none'; calc(); }
+  window.setCur=setCur;
+  function fmt(x){ return x.toLocaleString('en-US',{maximumFractionDigits:0}); }
+
+  function perContract(worst, strike){
+    var intrinsic=Math.max(0, worst-strike);
+    var loss=intrinsic*100;
+    var margin=(intrinsic + 0.20*worst)*100;
+    return {loss:loss, margin:margin, per:loss+margin, intrinsic:intrinsic};
+  }
+  function qqqDrop(mult){ return (mult-1)*0.28; }
+
+  function calc(){
+    var principal=parseFloat($('principal').value)||0;
+    var fx=parseFloat($('fx').value)||7.8;
+    var spot=parseFloat($('spot').value)||0;
+    var strike=parseFloat($('strike').value)||0;
+    var prem=parseFloat($('premium').value)||0;
+    var dte=parseFloat($('dte').value)||44;
+    var mult=parseFloat($('mult').value);
+    var sf=parseFloat($('sf').value);
+    var usd = cur==='HKD' ? principal/fx : principal;
+
+    $('mult-lab').textContent='×'+mult.toFixed(2);
+    $('sf-lab').textContent=sf.toFixed(2);
+
+    var worst=spot*mult;
+    var pc=perContract(worst, strike);
+    var n=Math.max(0, Math.floor(usd*sf/pc.per));
+
+    $('out-n').textContent=n;
+    $('k-worst').textContent='$'+worst.toFixed(1);
+    $('k-qqq').textContent='−'+(qqqDrop(mult)*100).toFixed(0)+'%';
+    $('k-per').textContent='$'+fmt(pc.per);
+    $('per2').textContent=fmt(pc.per);
+
+    var lp=pc.per>0?pc.loss/pc.per*100:50;
+    $('bar-loss').style.width=lp.toFixed(0)+'%'; $('bar-mrg').style.width=(100-lp).toFixed(0)+'%';
+    $('bl').textContent=fmt(pc.loss); $('bm').textContent=fmt(pc.margin);
+
+    var blow = n>0 ? (usd/(100*n) + 2*strike)/2.2 : Infinity;
+    $('k-blow').textContent = isFinite(blow)? '$'+blow.toFixed(1) : '—';
+
+    var rent=n*prem*100;
+    var ann = (usd>0 && dte>0) ? rent/usd*365/dte*100 : 0;
+    $('rent').textContent='$'+fmt(rent)+'  ('+n+'张 × '+prem.toFixed(2)+' × 100)';
+    $('ann').textContent = ann.toFixed(1)+'%';
+
+    var usdTxt = cur==='HKD' ? ('本金 '+fmt(principal)+' 港币 ≈ $'+fmt(usd)) : ('本金 $'+fmt(usd));
+    $('out-ctx').innerHTML = usdTxt+'，防御到 <b>SQQQ '+worst.toFixed(0)+'</b>（≈QQQ 跌 '+(qqqDrop(mult)*100).toFixed(0)+'%）。'+
+      '卖 <b>'+n+' 张</b>时真正强平要等到 <b>SQQQ '+ (isFinite(blow)?blow.toFixed(0):'—') +'</b>，比压测点还高，说明留了垫。';
+
+    var rows=[{m:1.8,r:'2018Q4 / 2022 级',c:'g'},{m:2.0,r:'2020 疫情级',c:'w'},{m:2.1,r:'2008 金融危机级',c:'w'},{m:2.5,r:'超级黑天鹅',c:'r'}];
+    var html='';
+    rows.forEach(function(row){
+      var w=spot*row.m, p=perContract(w,strike), nn=Math.max(0,Math.floor(usd*sf/p.per));
+      var isCur=Math.abs(row.m-mult)<0.03;
+      html+='<tr class="'+(isCur?'cur':'')+'"><td>×'+row.m.toFixed(1)+'<span class="tag '+row.c+'">'+(row.c==='g'?'较缓':row.c==='r'?'极端':'常见')+'</span></td>'+
+        '<td>$'+w.toFixed(0)+'</td><td class="danger">−'+(qqqDrop(row.m)*100).toFixed(0)+'%</td><td class="ref" style="text-align:left">'+row.r+'</td>'+
+        '<td>$'+fmt(p.per)+'</td><td style="font-weight:600">'+nn+' 张</td></tr>';
+    });
+    $('scentbody').innerHTML=html;
+  }
+  ['principal','fx','spot','strike','premium','dte','mult','sf'].forEach(function(id){
+    $(id).addEventListener('input', calc);
+  });
+  calc();
+})();
+</script>
+
+</body></html>

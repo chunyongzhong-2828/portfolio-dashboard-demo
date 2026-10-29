@@ -1,0 +1,115 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>📖 计算口径</title><style>
+  :root {
+    --bg: #0b0f15;
+    --bg-card: #151b26;
+    --border: #222a39;
+    --text: #e4e7eb;
+    --muted: #8893a6;
+    --green: #10b981;
+    --red: #ef4444;
+    --warn: #f59e0b;
+    --blue: #60a5fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Segoe UI", "PingFang SC", sans-serif;
+    font-size: 14px; line-height: 1.7;
+  }
+  header {
+    padding: 14px 20px; border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  h1 { margin: 0; font-size: 16px; font-weight: 600; }
+  nav a { color: var(--muted); text-decoration: none; margin-right: 14px; font-size: 12px; }
+  nav a.active { color: var(--text); border-bottom: 2px solid var(--blue); padding-bottom: 4px; }
+  nav a:hover { color: var(--text); }
+  main { max-width: 980px; margin: 0 auto; padding: 30px 24px 80px; }
+  h2 {
+    font-size: 18px; margin: 32px 0 14px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 { font-size: 14px; margin: 22px 0 10px; color: var(--blue); }
+  p { color: var(--text); }
+  ul, ol { padding-left: 22px; }
+  li { margin: 4px 0; }
+  code, pre {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 4px; padding: 2px 6px;
+    font-family: ui-monospace, "SF Mono", Menlo, Monaco, monospace;
+    font-size: 12.5px;
+  }
+  pre {
+    padding: 12px 16px; overflow-x: auto; line-height: 1.6;
+    color: #cbd5e1;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  th, td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { background: var(--bg-card); color: var(--muted); font-weight: 600; }
+  .tag-auto { background: rgba(16,185,129,.15); color: var(--green); padding: 2px 8px; border-radius: 4px; font-size: 11px; }
+  .tag-manual { background: rgba(245,158,11,.15); color: var(--warn); padding: 2px 8px; border-radius: 4px; font-size: 11px; }
+  .tag-formula { background: rgba(96,165,250,.15); color: var(--blue); padding: 2px 8px; border-radius: 4px; font-size: 11px; }
+  .callout {
+    background: rgba(96,165,250,.08); border-left: 3px solid var(--blue);
+    padding: 10px 14px; margin: 14px 0; border-radius: 4px;
+  }
+  .warn-callout {
+    background: rgba(245,158,11,.08); border-left: 3px solid var(--warn);
+    padding: 10px 14px; margin: 14px 0; border-radius: 4px;
+  }
+  .toc { background: var(--bg-card); padding: 14px 20px; border-radius: 6px; margin-bottom: 24px; }
+  .toc a { display: inline-block; margin-right: 14px; color: var(--blue); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .key { color: var(--blue); font-weight: 600; }
+</style><style>
+.wrap{max-width:1000px;margin:0 auto;padding:20px}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin:14px 0}
+h2{font-size:15px;margin:0 0 8px;color:var(--blue)} h3{font-size:14px;margin:12px 0 6px}
+table{border-collapse:collapse;width:100%;font-size:13px} th,td{border:1px solid var(--border);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:#1a2130;color:var(--muted);font-weight:600} code{background:#1a2130;padding:1px 6px;border-radius:4px;font-size:12px}
+.muted{color:var(--muted)} .tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;background:#1a2130;color:var(--muted);margin-right:4px}
+</style></head><body><div style="background:#1f2937;color:#fbbf24;font-size:12px;padding:6px 20px;border-bottom:1px solid #374151">演示数据 · 金额按统一系数缩放、名称已脱敏，结构与计算口径与真实看板一致 · 仅用于展示，不构成任何投资建议</div><header><div><h1 style="display:inline-block;margin-right:20px">📖 计算口径</h1>
+<nav style="display:inline-block">
+<a href="holdings.html">📊 持仓 Delta</a> <a href="holdings.html">👩 家人持仓</a> <a href="balance.html">💼 我的资产</a>
+<a href="balance_xi.html">👰 家人资产</a> <a href="balance_family.html">🏠 家庭资产</a> <a href="sqqq.html">🧨 SQQQ压测</a>
+<a href="docs.html" class="active">📖 计算口径</a></nav></div></header><div class="wrap">
+<div class="card"><h2>这个看板在算什么</h2>
+<p>把分散在多家券商、多个币种、两个人名下的资产和负债，折算成同一套口径的「家庭资产负债表」；再把期权持仓折成 Delta 敞口和保证金占用，用来回答两个问题：<b>钱在哪里、风险有多大</b>。</p>
+<p class="muted">数据来源：飞书表（手填与公式）＋ IBKR 交易接口（实时持仓、保证金）＋ 公开汇率接口。后端 Python，前端单页 HTML，Claude Code 协作完成。</p></div>
+
+<div class="card"><h2>五大类口径</h2>
+<table><tr><th>大类</th><th>包含</th><th>来源</th></tr>
+<tr><td>🟢 低风险套利</td><td>港美股券商账户、A 股券商账户、A 股可转债、加密资产</td><td>账户资金按表汇总，自动</td></tr>
+<tr><td>🔴 高风险炒股</td><td>IBKR 环球账户、家人 IB 账户、A 股券商账户（二）</td><td>IBKR 实时净值；其余手填</td></tr>
+<tr><td>🔵 现金-高流动</td><td>港卡现金、人民币现金</td><td>手填</td></tr>
+<tr><td>🟣 借出款</td><td>借给他人、尚未收回的钱（资产）</td><td>手填</td></tr>
+<tr><td>🟠 总负债</td><td>个人借款、银行／机构负债、家庭内部往来</td><td>手填＋自动</td></tr></table>
+<p class="muted">所有项先折成 HKD／RMB／USD 三币种，再汇总；页面右上角可切换口径，隐私模式会模糊金额只留比例。</p></div>
+
+<div class="card"><h2>家庭资产：内部往来双向冲销</h2>
+<p>我视角里「家庭内部往来」是负债，家人视角里「配偶-代管／借款」是资产，是同一笔钱。家庭口径把它们<b>双向去掉</b>，只留对外的资产和负债。</p>
+<table><tr><th>我视角</th><th>家人视角</th><th>家庭口径</th></tr>
+<tr><td>家庭内部往来（代管）＝负债</td><td>配偶-代管＝资产</td><td>互相抵消</td></tr>
+<tr><td>家庭内部往来（港币／人民币）＝负债</td><td>配偶-港币／人民币借款＝资产</td><td>互相抵消</td></tr></table>
+<p><code>家庭总资产 = 我的对外资产 + 家人对外资产</code>　<code>家庭净资产 = 我的净资产 + 家人净资产</code></p>
+<p class="muted">「代管」一项自动等于家人名下所有账户折港币的合计，两边永远精确相等，不需要手动同步。</p></div>
+
+<div class="card"><h2>持仓 Delta 与保证金：两种问法，两个答案</h2>
+<table><tr><th>列</th><th>回答的问题</th><th>怎么算</th></tr>
+<tr><td>独立占用</td><td>这个仓单独持有、不考虑对冲时占多少保证金</td><td>Reg-T 公式：裸卖 call ＝（期权价 ＋ max(20%×现价 − 价外额, 10%×现价)）× 乘数 × 张数；价差按行权价差；正股多头 25%、空头 30%</td></tr>
+<tr><td>平仓可释放</td><td>把这个标的全部平掉，账户实际腾出多少</td><td>IBKR whatIf 模拟平仓（纯模拟不下单）；多腿用组合单一次平</td></tr></table>
+<p>两者的差就是「组合保证金省下的」和「对冲仓共用、单平任一边都释放不了的」部分。饼图按大类拆账户实际维持保证金，加总正好等于账户实际值。</p>
+<p class="muted">Delta 用 IBKR 实时希腊值，收盘拿不到时按 Black-Scholes 本地回算；每个标的再乘 beta 折成「等效纳指敞口」。</p></div>
+
+<div class="card"><h2>汇率与更新频率</h2>
+<table><tr><th>对象</th><th>频率</th></tr>
+<tr><td>汇率</td><td>公开汇率接口 → 券商推送 → 兜底常数，缓存 1 小时；所有跨币种换算用同一个汇率</td></tr>
+<tr><td>持仓 Delta（IBKR）</td><td>开盘 60 秒／收盘 600 秒</td></tr>
+<tr><td>保证金分解（whatIf）</td><td>盘中每 8 分钟</td></tr>
+<tr><td>资产负债（读飞书表）</td><td>缓存 10 分钟，前端 60 秒拉一次</td></tr>
+<tr><td>月度净资产趋势</td><td>只画真正记账的月份；每日快照只做备查</td></tr></table></div>
+
+<div class="card"><h2>标签</h2>
+<span class="tag">自动</span>后端算好写回飞书，不用人动　<span class="tag">手填</span>在飞书填数字，后端只读　<span class="tag">公式</span>飞书表内公式联动　<span class="tag">内部</span>家庭内部往来，聚合时双向冲销
+<p class="muted" style="margin-top:10px">演示站说明：金额按统一系数缩放、账户名称已脱敏；真实看板跑在本机，由 launchd 守护、看门狗自动拉起。</p></div>
+</div></body></html>

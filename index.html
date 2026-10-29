@@ -1,0 +1,86 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>家庭资产负债看板 · 演示</title><style>
+  :root {
+    --bg: #0b0f15;
+    --bg-card: #151b26;
+    --border: #222a39;
+    --text: #e4e7eb;
+    --muted: #8893a6;
+    --green: #10b981;
+    --red: #ef4444;
+    --warn: #f59e0b;
+    --blue: #60a5fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Segoe UI", "PingFang SC", sans-serif;
+    font-size: 14px; line-height: 1.7;
+  }
+  header {
+    padding: 14px 20px; border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  h1 { margin: 0; font-size: 16px; font-weight: 600; }
+  nav a { color: var(--muted); text-decoration: none; margin-right: 14px; font-size: 12px; }
+  nav a.active { color: var(--text); border-bottom: 2px solid var(--blue); padding-bottom: 4px; }
+  nav a:hover { color: var(--text); }
+  main { max-width: 980px; margin: 0 auto; padding: 30px 24px 80px; }
+  h2 {
+    font-size: 18px; margin: 32px 0 14px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 { font-size: 14px; margin: 22px 0 10px; color: var(--blue); }
+  p { color: var(--text); }
+  ul, ol { padding-left: 22px; }
+  li { margin: 4px 0; }
+  code, pre {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 4px; padding: 2px 6px;
+    font-family: ui-monospace, "SF Mono", Menlo, Monaco, monospace;
+    font-size: 12.5px;
+  }
+  pre {
+    padding: 12px 16px; overflow-x: auto; line-height: 1.6;
+    color: #cbd5e1;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  th, td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { background: var(--bg-card); color: var(--muted); font-weight: 600; }
+  .tag-auto { background: rgba(16,185,129,.15); color: var(--green); padding: 2px 8px; border-radius: 4px; font-size: 11px; }
+  .tag-manual { background: rgba(245,158,11,.15); color: var(--warn); padding: 2px 8px; border-radius: 4px; font-size: 11px; }
+  .tag-formula { background: rgba(96,165,250,.15); color: var(--blue); padding: 2px 8px; border-radius: 4px; font-size: 11px; }
+  .callout {
+    background: rgba(96,165,250,.08); border-left: 3px solid var(--blue);
+    padding: 10px 14px; margin: 14px 0; border-radius: 4px;
+  }
+  .warn-callout {
+    background: rgba(245,158,11,.08); border-left: 3px solid var(--warn);
+    padding: 10px 14px; margin: 14px 0; border-radius: 4px;
+  }
+  .toc { background: var(--bg-card); padding: 14px 20px; border-radius: 6px; margin-bottom: 24px; }
+  .toc a { display: inline-block; margin-right: 14px; color: var(--blue); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .key { color: var(--blue); font-weight: 600; }
+</style><style>
+.wrap{max-width:1000px;margin:0 auto;padding:20px}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin:14px 0}
+h2{font-size:15px;margin:0 0 8px;color:var(--blue)} h3{font-size:14px;margin:12px 0 6px}
+table{border-collapse:collapse;width:100%;font-size:13px} th,td{border:1px solid var(--border);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:#1a2130;color:var(--muted);font-weight:600} code{background:#1a2130;padding:1px 6px;border-radius:4px;font-size:12px}
+.muted{color:var(--muted)} .tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;background:#1a2130;color:var(--muted);margin-right:4px}
+</style></head><body><div style="background:#1f2937;color:#fbbf24;font-size:12px;padding:6px 20px;border-bottom:1px solid #374151">演示数据 · 金额按统一系数缩放、名称已脱敏，结构与计算口径与真实看板一致 · 仅用于展示，不构成任何投资建议</div><header><div><h1 style="display:inline-block;margin-right:20px">家庭资产负债看板 · 演示</h1>
+<nav style="display:inline-block">
+<a href="holdings.html">📊 持仓 Delta</a> <a href="holdings.html">👩 家人持仓</a> <a href="balance.html">💼 我的资产</a>
+<a href="balance_xi.html">👰 家人资产</a> <a href="balance_family.html">🏠 家庭资产</a> <a href="sqqq.html">🧨 SQQQ压测</a>
+<a href="docs.html">📖 计算口径</a></nav></div></header><div class="wrap">
+<div class="card"><h2>家庭资产负债看板 · 演示站</h2>
+<p>一个自用的个人金融看板：把多家券商、多个币种、两个人名下的账户折成同一套口径，每天自动更新；期权持仓折成 Delta 敞口和保证金占用。后端 Python ＋ IBKR 接口 ＋ 飞书表，前端单页 HTML，用 Claude Code 协作完成。</p>
+<table><tr><th>页面</th><th>看什么</th></tr>
+<tr><td><a href="balance.html">💼 我的资产</a></td><td>五大类资产、负债率、目标进度、月度净资产趋势</td></tr>
+<tr><td><a href="balance_xi.html">👰 家人资产</a></td><td>同一套口径的家人视角，含家庭内部往来</td></tr>
+<tr><td><a href="balance_family.html">🏠 家庭资产</a></td><td>两人合并，内部往来双向冲销</td></tr>
+<tr><td><a href="holdings.html">📊 持仓 Delta</a></td><td>需连 IBKR 实时数据，演示站用说明代替</td></tr>
+<tr><td><a href="sqqq.html">🧨 SQQQ 压测</a></td><td>卖 call 安全张数计算器：本金反推在极端行情下能扛住的张数</td></tr>
+<tr><td><a href="docs.html">📖 计算口径</a></td><td>每一项怎么算、数据从哪来、多久更新一次</td></tr></table>
+<p class="muted">演示数据：金额按统一系数缩放、名称已脱敏；结构与计算逻辑与真实看板一致。仅作展示，不构成任何投资建议。</p></div>
+</div></body></html>
